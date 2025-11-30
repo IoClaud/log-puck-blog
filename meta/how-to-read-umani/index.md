@@ -4,6 +4,7 @@ title: "How to Read Log_Puck – Versione Umani"
 regno: "Triadico"
 livello: "L1"
 versione: "v1.0"
+permalink: /meta/how-to-read-umani/
 ---
 
 # Come leggere Log_Puck  
