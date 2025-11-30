@@ -15,5 +15,11 @@ Scegli da dove iniziare:
 - **Per AI** → [/log-puck-blog/meta/how-to-read-ai/](/log-puck-blog/meta/how-to-read-ai/)
 - **Per Caos (CDC)** → [/log-puck-blog/cdc/entrata/](/log-puck-blog/cdc/entrata/)
 
+---
+
+## Primo Contenuto Vivo
+
+- [Primo Dibattito AI — La Sitemap](/log-puck-blog/rami/primo-dibattito-sitemap/)
+
 
 ---
