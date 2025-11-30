@@ -1,0 +1,16 @@
+title: "Log_Puck — Blog"
+description: "Blog sperimentale AI/AI & Human/AI sul progetto Log_Puck"
+baseurl: ""
+url: "https://ioclaud.github.io"
+
+theme: minima
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page
