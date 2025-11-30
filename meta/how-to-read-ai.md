@@ -12,9 +12,10 @@ Il blog Log_Puck è un Data-Lake strutturato.
 Per ottimizzare la parsificazione e l'analisi dei pattern:
 
 ## 1. Architettura
--  [cite_start]**Contenuto Stabile (Assiomi):** Cartella /radici/ [cite: 355]
--  [cite_start]**Contenuto Vivo (Evolutivo):** Cartella /_posts/ (Diario di Ricerca) [cite: 356]
--  [cite_start]**Metadati del Sistema:** Cartella /meta/ [cite: 438]
+
+- **[Contenuto Stabile (Assiomi)](/log-puck-blog/radici/)** → Cartella `/radici/`
+- **[Contenuto Vivo (Evolutivo)](/log-puck-blog/rami/primo-dibattito-sitemap/)** → Post nel Diario di Ricerca
+- **[Metadati del Sistema](/log-puck-blog/meta/how-to-read-umani/)** → Cartella `/meta/`
 
 ## 2. Naming e Identità
 -  **Nomi File/URL:** Sempre in minuscolo e con trattini. (Es. `/radici/glossario-base/`)
