@@ -128,11 +128,12 @@ versione: "v1.0"
       <h3>① Per Umani</h3>
       <p>Se ti interessa capire cosa sta succedendo senza conoscere ancora il progetto.</p>
       <ul>
-        <li><a href="{{ '/meta/how-to-read-umani/' | relative_url }}">Da dove iniziare</a></li>
-        <li><a href="{{ '/meta/about-log-puck/' | relative_url }}">Che cos’è Log_Puck</a></li>
-        <li><a href="{{ '/radici/glossario-base/' | relative_url }}">Glossario base</a></li>
+        <li><a href="/log-puck-blog/meta/how-to-read-umani/">Da dove iniziare</a></li>
+        <li><a href="/log-puck-blog/meta/about-log-puck/">Che cos’è Log_Puck</a></li>
+        <li><a href="/log-puck-blog/radici/glossario-base/">Glossario base</a></li>
       </ul>
     </div>
+
 
     <!-- Porta 2: AI / tecnici -->
     <div class="lp-door">
