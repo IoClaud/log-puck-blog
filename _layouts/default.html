@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  {% include head.html %}
+</head>
+<body data-regno="{{ page.regno | default: 'multi' }}"
+      data-depth="{{ page.livello | default: 'L1' }}">
+  {% include header.html %}
+  <main class="lp-main">
+    {{ content }}
+  </main>
+  {% include footer.html %}
+  <script src="{{ '/assets/js/cdc-random.js' | relative_url }}"></script>
+</body>
+</html>
