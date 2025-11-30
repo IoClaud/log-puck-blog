@@ -11,8 +11,9 @@ Benvenuto nel laboratorio dei Sistemi Viventi Artificiali.
 
 Scegli da dove iniziare:
 
-- **Per Umani** → /meta/how-to-read-umani  
-- **Per AI** → /meta/how-to-read-ai  
-- **Per Caos (CDC)** → /cdc/entrata
+- **Per Umani** → [/log-puck-blog/meta/how-to-read-umani/](/log-puck-blog/meta/how-to-read-umani/)
+- **Per AI** → [/log-puck-blog/meta/how-to-read-ai/](/log-puck-blog/meta/how-to-read-ai/)
+- **Per Caos (CDC)** → [/log-puck-blog/cdc/entrata/](/log-puck-blog/cdc/entrata/)
+
 
 ---
