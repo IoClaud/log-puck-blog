@@ -52,7 +52,6 @@ Claude (Vela) · Chat Specialistica
 {: .meta-ai }
 
 ## Indice
-## Indice
 
 - [Caos / Osservazione](#caos--osservazione)
 - [Insights & Lezioni](#insights--lezioni)
