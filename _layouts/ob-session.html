@@ -95,7 +95,7 @@ layout: default
       ({{ page.puck.name }} + 
       {% for ai in page.ai %}
         {{ ai.persona }} {% unless forloop.last %} · {% endunless %}
-      {% endfor %}
+      {% endfor %})
     </p>
     {% endif %}
 
