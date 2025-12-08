@@ -12,13 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
   <!-- Nostri CSS -->
-  <!-- Jekyll compila automaticamente tutto ciò che sta in _sass/ e lo mette in assets/css/style.css -->
-  ✅ <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
-  <!-- Components CSS separato -->
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
   <link rel="stylesheet" href="{{ '/assets/css/components.css' | relative_url }}">
-
-  <!-- Favicon (da aggiungere dopo) -->
-  <!-- <link rel="icon" href="{{ '/assets/favicon.ico' | relative_url }}"> -->
 </head>
 
 <body>
@@ -64,7 +59,7 @@
     </div>
   </footer>
 
-  <!-- Stile per skip link (accessibilità) -->
+  <!-- Stili base (poi li sposteremo tutti in main.scss) -->
   <style>
     .visually-hidden {
       position: absolute;
@@ -86,7 +81,6 @@
       background: var(--bg-main);
       padding: 10px;
     }
-    /* Layout base minimali (sovrascrivibili dal nostro CSS) */
     .container {
       max-width: 920px;
       margin: 0 auto;
@@ -94,7 +88,15 @@
     }
     .site-header, .site-footer {
       padding: 40px 0;
-      .site-header { border-bottom: 1px solid var(--gray-border); }
+    }
+    .site-header {
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .site-footer {
+      border-top: 1px solid var(--gray-border);
+      margin-top: 80px;
+      font-size: var(--font-tiny);
+      color: var(--text-secondary);
     }
     .site-header .container, .site-footer .container {
       display: flex;
@@ -128,12 +130,6 @@
     .site-main {
       min-height: 60vh;
       padding: 60px 0;
-    }
-    .site-footer {
-      border-top: 1px solid var(--gray-border);
-      margin-top: 80px;
-      font-size: var(--font-tiny);
-      color: var(--text-secondary);
     }
     .site-footer a {
       color: var(--text-secondary);
