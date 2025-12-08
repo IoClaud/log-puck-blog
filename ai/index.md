@@ -20,7 +20,7 @@ Le descrizioni complete emergeranno nelle Ob Session e nelle rispettive pagine d
 ### 🔵 **Claude (Vela)**
 **Ruolo:** Metronomo logico, verificatore strutturale  
 **Funzione:** Analisi, validazione, sviluppo componenti  
-**Pagina:** [Claude (Vela)](/ai/claude/)
+**Pagina:** [Vela](/ai/claude/vela/)
 
 ---
 
