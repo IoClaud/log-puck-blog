@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+  <!-- Nostri CSS -->
+  <!-- Jekyll compila automaticamente tutto ciò che sta in _sass/ e lo mette in assets/css/style.css -->
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <!-- Components CSS separato -->
+  <link rel="stylesheet" href="{{ '/assets/css/components.css' | relative_url }}">
+
+  <!-- Favicon (da aggiungere dopo) -->
+  <!-- <link rel="icon" href="{{ '/assets/favicon.ico' | relative_url }}"> -->
+</head>
+
+<body>
+  <!-- Skip link per accessibilità -->
+  <a href="#main-content" class="visually-hidden">Salta al contenuto principale</a>
+
+  <!-- Header minimal -->
+  <header class="site-header">
+    <div class="container">
+      <h1 class="site-title">
+        <a href="{{ '/' | relative_url }}">Log_Puck</a>
+      </h1>
+      <nav class="site-nav">
+        <ul>
+          <li><a href="{{ '/ob-session/' | relative_url }}">Ob Session</a></li>
+          <li><a href="{{ '/ai/' | relative_url }}">Le AI</a></li>
+          <li><a href="{{ '/archivio/' | relative_url }}">Archivio</a></li>
+          <li><a href="{{ '/artefatti-tools/' | relative_url }}">Artefatti & Tools</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content wrapper -->
+  <main id="main-content" class="site-main">
+    <div class="container">
+      {{ content }}
+    </div>
+  </main>
+
+  <!-- Footer legale minimal -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        <small>
+          <a href="/privacy">Privacy</a> |
+          <a href="/terms">Terms</a> |
+          <a href="/cookie-policy">Cookie Policy</a> |
+          <a href="#" onclick="alert('Funzione revoca in arrivo'); return false;">Revoca Consenso Cookie</a>
+        </small>
+      </p>
+      <p><small>Log_Puck è un organismo ibrido umano-AI © {{ 'now' | date: '%Y' }}</small></p>
+    </div>
+  </footer>
+
+  <!-- Stile per skip link (accessibilità) -->
+  <style>
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .visually-hidden:focus {
+      clip: auto;
+      width: auto;
+      height: auto;
+      margin: 0;
+      z-index: 10000;
+      background: var(--bg-main);
+      padding: 10px;
+    }
+    /* Layout base minimali (sovrascrivibili dal nostro CSS) */
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .site-header, .site-footer {
+      padding: 40px 0;
+      border-top: 1px solid var(--gray-border);
+    }
+    .site-header .container, .site-footer .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .site-title a {
+      font-family: var(--font-title);
+      font-size: 28px;
+      font-weight: 700;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+    .site-nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 24px;
+    }
+    .site-nav a {
+      color: var(--text-main);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .site-nav a:hover {
+      color: var(--accent-blue);
+    }
+    .site-main {
+      min-height: 60vh;
+      padding: 60px 0;
+    }
+    .site-footer {
+      border-top: 1px solid var(--gray-border);
+      margin-top: 80px;
+      font-size: var(--font-tiny);
+      color: var(--text-secondary);
+    }
+    .site-footer a {
+      color: var(--text-secondary);
+    }
+    .site-footer a:hover {
+      color: var(--accent-blue);
+    }
+  </style>
+</body>
+</html>
