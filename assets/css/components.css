@@ -248,7 +248,7 @@
 .ref-archivio {
   background: var(--ref-bg);
   padding: 60px 40px;  /* ← era 60px 0, aggiungi padding laterale */
-  margin: 60px calc(-50vw + 50%) 0;
+  margin: 35px 0; <!-- calc(-50vw + 50%) 0; -->
   width: 100vw;
   position: relative;
   left: 50%;
@@ -360,8 +360,8 @@
   }
 
    .ref-archivio {
-    padding: 40px 0;  
-    margin: 40px 0;  /* rimuovi margin negativo su mobile */
+    padding: 40px 20px;  
+    <!-- margin: 32px 0;  /* rimuovi margin negativo su mobile */ -->
   }
 
    <!--
