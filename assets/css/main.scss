@@ -1,0 +1,12 @@
+---
+---
+@import "variables";
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-body-size);
+  line-height: var(--line-height-body);
+  color: var(--text-main);
+  background: var(--bg-main);
+  margin: 0;
+}
