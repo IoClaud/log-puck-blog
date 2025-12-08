@@ -1,3 +1,5 @@
+# No theme - use custom layouts only
+theme: 
 title: "Log_Puck"
 description: "Organismo ibrido umano-AI che documenta pattern cognitivi trasparenti"
 baseurl: "/log-puck-blog"
