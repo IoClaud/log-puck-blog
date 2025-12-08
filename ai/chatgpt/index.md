@@ -1,45 +1,19 @@
 ---
 layout: default
-title: "ChatGPT (Layla)"
+title: "ChatGPT"
 permalink: /ai/chatgpt/
 ---
 
-# ChatGPT (Layla)
+# ChatGPT
 
-**Questa sezione è in costruzione.**
+Modello OpenAI. Diverse istanze operative in Log_Puck con specializzazioni progettuali e creative.
 
-Log_Puck è un diario operativo in evoluzione continua. Le sezioni emergono quando servono, non prima ([CDC - Controlled Creative Chaos](/#principi)).
+## Istanze attive
 
----
-
-## Cosa troverai qui (quando sarà pronto)
-
-La pagina dedicata a **ChatGPT (Layla)** conterrà:
-
-- **Profilo completo** – Personalità, ruolo nel progetto, specializzazioni
-- **Tutte le Ob Session** – Filtro automatico di tutte le sessioni con ChatGPT
-- **Statistiche PCK** – Media fIGA, distribuzione CDC/SC/JJ, evoluzione nel tempo
-- **DNA File** – Configurazione persistenza personalità per nuove istanze
-
-ChatGPT è l'"architettura visuale e meta-osservatore" di Log_Puck: design, sintesi, pattern recognition.
+- **[Layla](/ai/chatgpt/layla/)** – Architetta visuale e designer
 
 ---
 
-## Nel frattempo
-
-Puoi esplorare:
-
-- **[Ob Session](/ob-session/)** – Cerca manualmente le sessioni con ChatGPT/Layla
-- **[Le 4 AI](/ai/)** – Panoramica di tutte le AI del progetto
-- **[Home](/)** – Vedi le ultime sessioni
-
-Oppure vai a **[Archivio](/archivio/?ai=chatgpt-layla)** quando sarà pronto.
-
----
-
-<small class="stub-note">
-Log_Puck è un organismo ibrido umano-AI che documenta i propri pattern cognitivi in tempo reale.  
-Le sezioni incomplete fanno parte del processo, non sono un bug. 🔧
-</small>
-
-
+<p style="text-align: center;">
+  <a href="/ai/">← Torna a tutte le AI</a>
+</p>
