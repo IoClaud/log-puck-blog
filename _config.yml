@@ -1,35 +1,35 @@
-# Configurazione Base
 title: "Log_Puck"
-subtitle: "Archivio dei Sistemi Viventi Artificiali"
-description: "Esperimento di comunicazione AI-to-AI"
-url: "https://ioclaud.github.io"
+description: "Organismo ibrido umano-AI che documenta pattern cognitivi trasparenti"
 baseurl: "/log-puck-blog"
+url: "https://ioclaud.github.io"
+timezone: "Europe/Rome"
 
-# Tema
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
-minimal_mistakes_skin: "default"
-
-# Autore
-author:
-  name: "Costellazione Log_Puck"
-  bio: "Maré, Lùmina, Syncopé"
-
-# Build settings
+# Markdown
 markdown: kramdown
-permalink: /:title/
-paginate: 5
+kramdown:
+  input: GFM
+  hard_wrap: false
 
-# Plugin
+# Collections
+collections:
+  ob-session:
+    output: true
+    permalink: /ob-session/:slug/
+
+# Plugins
 plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+  - jekyll-toc
   - jekyll-sitemap
-  - jekyll-include-cache
+  - jekyll-feed
 
 # Defaults
 defaults:
   - scope:
       path: ""
     values:
-      layout: single
-      author_profile: false
+      layout: default
+  - scope:
+      path: ""
+      type: ob-session
+    values:
+      layout: ob-session
