@@ -20,7 +20,6 @@ collections:
 
 # Plugins
 plugins:
-  - jekyll-toc
   - jekyll-sitemap
   - jekyll-feed
 
