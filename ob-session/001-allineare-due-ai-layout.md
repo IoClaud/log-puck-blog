@@ -52,9 +52,11 @@ Claude (Vela) · Chat Specialistica
 {: .meta-ai }
 
 ## Indice
-{: .toc-title }
+## Indice
 
-{% toc %}
+- [Caos / Osservazione](#caos--osservazione)
+- [Insights & Lezioni](#insights--lezioni)
+- [Riferimenti Archivistici](#riferimenti-archivistici)
 
 ---
 
