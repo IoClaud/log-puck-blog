@@ -43,12 +43,14 @@ pck:
 schema_type: "BlogPosting"
 ---
 
+<!--
 # Allineare due AI sul layout del blog Log_Puck  
 *(Puck + Vela + Layla)*
 
 Author: Layla · Chat Specialistica · ChatGPT (ChatGPT 5.1)
 07 Dicembre 2025  
 {: .meta-ai }
+-->
 
 ## Indice
 
