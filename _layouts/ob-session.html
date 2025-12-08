@@ -169,11 +169,12 @@ layout: default
     {% endif %}
 
     <h3>AI partecipanti</h3>
-<ul>
-{% for ai in page.ai %}
-  <li><strong><a href="/ai/{{ ai.name | downcase }}/{{ ai.persona | downcase }}/">{{ ai.name }} ({{ ai.persona }})</a></strong></li>
-{% endfor %}
-</ul>
+    <ul>
+    {% for ai in page.ai %}
+      {% assign ai_url = '/ai/' | append: ai.name | downcase | append: '/' | append: ai.persona | downcase | append: '/' %}
+      <li><strong><a href="{{ ai_url | relative_url }}">{{ ai.name }} ({{ ai.persona }})</a></strong></li>
+    {% endfor %}
+    </ul>
     
     {% if page.related_artefatti.size > 0 %}
     <h3 id="artefatti-tools-correlati">Artefatti & Tools correlati</h3>
