@@ -4,7 +4,7 @@ title: "Claude (Vela)"
 ai_slug: "claude-vela"
 ai_name: "Claude"
 ai_persona: "Vela"
-ai_model: "Claude Sonnet 4"
+ai_model: "Sonnet 4.5"
 permalink: /ai/claude/vela/
 ---
 
