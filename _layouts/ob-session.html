@@ -2,7 +2,7 @@
 layout: default
 ---
 <!-- 
-  Layout: OBb Session
+  Layout: OB Session
   Template per tutte le OB Session di Log_Puck
   Versione: 1.1 (fix slug coerenza)
 -->
@@ -76,13 +76,63 @@ layout: default
 }
 </script>
 
+<!-- Riferimenti Archivistici (auto-generated) -->
+{% if page.related_sessions.size > 0 or page.related_artefatti.size > 0 or page.archivio_filters.size > 0 %}
+<div class="ref-archivio">
+  <h2 id="riferimenti-archivistici">Riferimenti Archivistici</h2>
+  
+  {% if page.related_sessions.size > 0 %}
+  <h3 id="ob-session-correlate">Ob Session correlate</h3>
+  <ul>
+    {% for session in page.related_sessions %}
+    <li>
+      <strong>
+        {% if session.slug %}
+        <a href="/ob-session/{{ session.slug }}/">{{ session.title }}</a>
+        {% else %}
+        {{ session.title }}
+        {% endif %}
+      </strong>
+      {% if session.note %}<br>{{ session.note }}{% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  
+  {% if page.related_artefatti.size > 0 %}
+  <h3 id="artefatti-tools-correlati">Artefatti & Tools correlati</h3>
+  <ul>
+    {% for artefatto in page.related_artefatti %}
+    <li>
+      {% if artefatto.url %}
+      <strong><a href="{{ artefatto.url }}">{{ artefatto.title }}</a></strong>
+      {% else %}
+      <strong>{{ artefatto.title }}</strong>
+      {% endif %}
+    </li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+  
+  {% if page.archivio_filters.size > 0 %}
+  <h3 id="filtri-consigliati-nellarchivio">Filtri consigliati nell'Archivio</h3>
+  <p>Mostra tutte le Ob Session con:</p>
+  <ul>
+    {% for filter in page.archivio_filters %}
+    <li><strong><a href="{{ filter.url }}">{{ filter.label }}</a></strong></li>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</div>
+{% endif %}
+
 <!-- Main article -->
 <article class="ob-session" itemscope itemtype="https://schema.org/BlogPosting">
   
   <!-- Breadcrumb -->
   <nav class="breadcrumb" aria-label="Breadcrumb">
     <a href="/">Home</a> &gt; 
-    <a href="/ob-session/">Ob Session</a> &gt; 
+    <a href="/ob-session/">OB Session</a> &gt; 
     <span>{{ page.title }}</span>
   </nav>
 
