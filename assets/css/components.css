@@ -247,7 +247,7 @@
 
 .ref-archivio {
   background: var(--ref-bg);
-  padding: 60px 40px;  /* ← era 60px 0, aggiungi padding laterale */
+  padding: 60px 50px;  /* ← era 60px 0, aggiungi padding laterale */
   margin: 35px 0; <!-- calc(-50vw + 50%) 0; -->
   width: 100vw;
   position: relative;
@@ -273,7 +273,7 @@
 
 .ref-archivio ul {
   list-style: none;
-  <!-- padding: 0; -->
+  padding: 20px;
 }
 
 .ref-archivio li {
