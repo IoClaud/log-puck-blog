@@ -360,7 +360,7 @@
   }
 
    .ref-archivio {
-    padding: 40px 20px;  /* più padding laterale su mobile */
+    padding: 40px 0;  
     margin: 40px 0;  /* rimuovi margin negativo su mobile */
   }
 
