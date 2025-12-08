@@ -247,7 +247,7 @@
 
 .ref-archivio {
   background: var(--ref-bg);
-  padding: 60px 0;
+  padding: 60px 40px;  /* ← era 60px 0, aggiungi padding laterale */
   margin: 60px calc(-50vw + 50%) 0;
   width: 100vw;
   position: relative;
@@ -258,11 +258,7 @@
 }
 
 .ref-archivio > * {
-  max-width: 920px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+  /* ← rimuovi questa regola completamente se esiste */
 }
 
 .ref-archivio h3 {
