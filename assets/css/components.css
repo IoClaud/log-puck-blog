@@ -367,12 +367,13 @@
     padding: 40px 20px;  /* più padding laterale su mobile */
     margin: 40px 0;  /* rimuovi margin negativo su mobile */
   }
-  
+
+   <!--
   .ref-archivio > * {
     padding-left: 20px;
     padding-right: 20px;
-  }
-   
+  } -->
+
    .ref-archivio h3,
   .ref-archivio ul,
   .ref-archivio li {
