@@ -253,7 +253,7 @@ Per Log_Puck la granularità è valore (mostra il livello di cura), ma:
 </div>
 
 ---
-
+<!--
 ## Riferimenti Archivistici
 
 <div class="ref-archivio" markdown="1">
@@ -292,4 +292,4 @@ Per Log_Puck la granularità è valore (mostra il livello di cura), ma:
   - **CDC ≥ 8**
 
 </div>
-
+-->
