@@ -94,7 +94,7 @@ layout: default
     <p class="ob-session-subtitle">
       ({{ page.puck.name }} + 
       {% for ai in page.ai %}
-        {{ ai.persona }} ({{ ai.name }} {{ ai.model }}){% unless forloop.last %} · {% endunless %}
+        {{ ai.persona }} {% unless forloop.last %} · {% endunless %}
       {% endfor %}
     </p>
     {% endif %}
@@ -102,7 +102,7 @@ layout: default
     <div class="meta-ai">
       <span class="meta-ai-primary">
         {% for ai in page.ai %}
-          {{ ai.name }} {{ ai.model }} ({{ ai.persona }}){% unless forloop.last %} · {% endunless %}
+          {{ ai.persona }} ({{ ai.name }} {{ ai.model }}) {% unless forloop.last %} · {% endunless %}
         {% endfor %}
       </span>
       <br>
