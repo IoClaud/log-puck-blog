@@ -2,8 +2,8 @@
 layout: default
 ---
 <!-- 
-  Layout: Ob Session
-  Template per tutte le Ob Session di Log_Puck
+  Layout: OBb Session
+  Template per tutte le OB Session di Log_Puck
   Versione: 1.1 (fix slug coerenza)
 -->
 
@@ -20,11 +20,11 @@ layout: default
     {
       "@type": "Person",
       "name": "{{ page.puck.name | default: 'Puck' }}"
-    },
+    }{% for ai in page.ai %},
     {
       "@type": "Person",
-      "name": "{{ page.ai.name }} ({{ page.ai.persona }})"
-    }
+      "name": "{{ ai.name }} ({{ ai.persona }})"
+    }{% endfor %}
   ],
   "about": {
     "@type": "Thing",
@@ -90,15 +90,20 @@ layout: default
   <header class="ob-session-header">
     <h1 itemprop="headline">{{ page.title }}</h1>
     
-    {% if page.ai.persona and page.co_ai %}
-    <p class="ob-session-subtitle">({{ page.puck.name }} + {{ page.ai.name }}/{{ page.ai.persona }} + {{ page.co_ai[0].name }}/{{ page.co_ai[0].persona }})</p>
-    {% elsif page.ai.persona %}
-    <p class="ob-session-subtitle">({{ page.puck.name }} + {{ page.ai.name }}/{{ page.ai.persona }})</p>
+    {% if page.ai.size > 0 %}
+    <p class="ob-session-subtitle">
+      ({{ page.puck.name }} + 
+      {% for ai in page.ai %}
+        {{ ai.name }}/{{ ai.persona }}{% unless forloop.last %} + {% endunless %}
+      {% endfor %})
+    </p>
     {% endif %}
 
     <div class="meta-ai">
       <span class="meta-ai-primary">
-        {{ page.ai.name }} ({{ page.ai.persona }}) · {{ page.ct }}
+        {% for ai in page.ai %}
+          {{ ai.name }} ({{ ai.persona }}){% unless forloop.last %} · {% endunless %}
+        {% endfor %}
       </span>
       <br>
       <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
@@ -115,16 +120,19 @@ layout: default
       jj_pta=page.pck.jj_pta
       jj_atp=page.pck.jj_atp
       ct=page.ct
-      ai_slug=page.ai.slug
-      ai_display=page.ai.name
-      ai_persona=page.ai.persona
+      ai_slug=page.ai[0].slug
+      ai_display=page.ai[0].name
+      ai_persona=page.ai[0].persona
   %}
-
+  
   <!-- Quick links -->
   <div class="pck-links">
-    <a href="/archivio/?ai={{ page.ai.slug }}">
-      Vedi tutte le sessioni con {{ page.ai.name }} ({{ page.ai.persona }})
+    {% for ai in page.ai %}
+    <a href="/archivio/?ai={{ ai.slug }}">
+      Vedi tutte le sessioni con {{ ai.name }} ({{ ai.persona }})
     </a>
+    {% unless forloop.last %}·{% endunless %}
+    {% endfor %}
     ·
     <a href="/archivio/?ct={{ page.ct | downcase | replace: ' ', '-' }}">
       Filtra tutte le Ob Session con CT = {{ page.ct }}
@@ -139,14 +147,11 @@ layout: default
   <!-- Meta footer -->
   <footer class="ob-session-footer">
     <div class="ob-session-meta-details">
-      <p><strong>AI:</strong> {{ page.ai.name }} ({{ page.ai.persona }}) · {{ page.ai.model }}</p>
-      {% if page.co_ai %}
-      <p><strong>Co-AI:</strong> 
-        {% for ai in page.co_ai %}
-          {{ ai.name }} ({{ ai.persona }}){% unless forloop.last %}, {% endunless %}
+      <p><strong>AI partecipanti:</strong> 
+        {% for ai in page.ai %}
+          {{ ai.name }} ({{ ai.persona }}) · {{ ai.model }}{% unless forloop.last %} | {% endunless %}
         {% endfor %}
       </p>
-      {% endif %}
       <p><strong>Ponte umano:</strong> {{ page.puck.name }}</p>
       <p><strong>Tipo interazione:</strong> {{ page.ct }}</p>
       <p><strong>Pubblicato:</strong> {{ page.date | date: "%d %B %Y" }}</p>
