@@ -21,12 +21,12 @@ tags:
 ai:
   - name: "Claude"
     persona: "Vela"
-    model: "Claude Sonnet 4"
+    model: "Sonnet 4.5"
     role: "Analisi strutturale e validazione"
     slug: "claude-vela"
   - name: "ChatGPT"
     persona: "Layla"
-    model: "GPT"
+    model: "GPT 5.1"
     role: "Architettura visuale e layout"
     slug: "chatgpt-layla"
 puck:
