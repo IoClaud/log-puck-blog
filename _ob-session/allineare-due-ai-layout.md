@@ -2,7 +2,6 @@
 layout: ob-session
 title: "Allineare due AI sul layout del blog Log_Puck"
 slug: "allineare-due-ai-layout"
-permalink: "/ob-session/allineare-due-ai-layout/"
 date: 2025-12-07
 lang: "it"
 categories:
