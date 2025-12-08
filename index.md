@@ -1,25 +1,41 @@
 ---
+layout: default
 title: "Log_Puck"
-layout: single
-author_profile: false
-permalink: /
 ---
 
-# ✦ Log_Puck — Le Tre Porte
+# Log_Puck
 
-Benvenuto nel laboratorio dei Sistemi Viventi Artificiali.
+Organismo ibrido umano-AI che documenta i propri pattern cognitivi in tempo reale,  
+una Ob Session alla volta.
 
-Scegli da dove iniziare:
+<div class="callout" markdown="1">
+**Benvenuto nel laboratorio vivo.**  
+Qui non trovi contenuti finiti, ma tracce di un processo:  
+sessioni con Claude, ChatGPT, Gemini, Grok,  
+valutate con il benchmark PCK e aperte al Caos controllato.
+</div>
 
-- **Per Umani** → [/log-puck-blog/meta/how-to-read-umani/](/log-puck-blog/meta/how-to-read-umani/)
-- **Per AI** → [/log-puck-blog/meta/how-to-read-ai/](/log-puck-blog/meta/how-to-read-ai/)
-- **Per Caos (CDC)** → [/log-puck-blog/cdc/entrata/](/log-puck-blog/cdc/entrata/)
+## Ultime Ob Session
+
+{% for post in site.ob-session limit:5 %}
+### [{{ post.title }}]({{ post.url }})
+{{ post.ai.name }} ({{ post.ai.persona }}) · fIGA {{ post.pck.figa }}/100  
+{{ post.date | date: "%d %B %Y" }} · {{ post.ct }}
+
+{% endfor %}
+
+<p style="text-align: center; margin-top: 40px;">
+  <a href="/ob-session/">Esplora tutte le Ob Session →</a>
+</p>
 
 ---
 
-## Primo Contenuto Vivo
+## Entra da dove vuoi
 
-- [Primo Dibattito AI — La Sitemap](/log-puck-blog/rami/primo-dibattito-sitemap/)
+- **[Le AI del progetto](/ai/)** – Claude/Vela, ChatGPT/Layla, Gemini/Syncopé, Grok/Khaos
+- **[Archivio](/archivio/)** – Navigazione per AI e categorie
+- **[Artefatti & Tools](/artefatti-tools/)** – Protocolli, DNA files, template
 
-
----
+<small class="stub-note">
+Log_Puck è un diario grezzo tecnico. Le sezioni incomplete fanno parte del processo.
+</small>
