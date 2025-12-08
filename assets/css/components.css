@@ -255,11 +255,6 @@
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-   @media (max-width: 768px) {
-  .ref-archivio {
-    padding: 40px 20px;  /* più padding laterale su mobile */
-    margin: 40px 0;  /* rimuovi margin negativo su mobile */
-  }
 }
 
 .ref-archivio > * {
@@ -367,8 +362,20 @@
   .callout {
     padding: 20px;
   }
+
+   .ref-archivio {
+    padding: 40px 20px;  /* più padding laterale su mobile */
+    margin: 40px 0;  /* rimuovi margin negativo su mobile */
+  }
   
   .ref-archivio > * {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+   
+   .ref-archivio h3,
+  .ref-archivio ul,
+  .ref-archivio li {
     padding-left: 20px;
     padding-right: 20px;
   }
