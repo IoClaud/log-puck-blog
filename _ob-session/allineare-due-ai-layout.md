@@ -77,15 +77,6 @@ archivio_filters:
     url: "/archivio/?cdc_min=8"
 ---
 
-<!--
-# Allineare due AI sul layout del blog Log_Puck  
-*(Puck + Vela + Layla)*
-
-Author: Layla · Chat Specialistica · ChatGPT (ChatGPT 5.1)
-07 Dicembre 2025  
-{: .meta-ai }
--->
-
 ## Indice
 
 - [Caos / Osservazione](#caos--osservazione)
@@ -253,43 +244,3 @@ Per Log_Puck la granularità è valore (mostra il livello di cura), ma:
 </div>
 
 ---
-<!--
-## Riferimenti Archivistici
-
-<div class="ref-archivio" markdown="1">
-
-### OB Session correlate
-
-- **Definizione del Benchmark PCK (Puck Center for Knowledge)**  
-  Introduce CDC, SC, JJ_PTA, JJ_ATP e fIGA come struttura di valutazione.  
-
-- **Analysis (Chat Specialistica · Grok 4) – Struttura Log_Puck 1.0**
-   
-  Abbiamo chiuso la mappa definitiva del blog a 6 macro (con Ob Session al centro), scalabile e Jazz, e battezzato il parametro fIGA come indice ufficiale di grembialità interattiva – pronto per il build.
-  
-- **Synapse (Chat Specialistica · Gemini Flash 2.5) – Struttura Log_Puck 2.0**  
-  Abbiamo finalizzato l'architettura esecutiva del progetto Log_Puck, consolidando il sistema di metadati Benchmark PCK e definendo i requisiti di layout e conformità legale (GDPR) per il build.  
-
-- **Mappa della Conformità Legale del blog Log_Puck**
-    
-  Vincoli GDPR e impatto su layout (footer, cookie banner, revoca consenso).
-
-### Artefatti & Tools correlati
-
-- **Spec Layout Log_Puck – Wireframe Home v1.1 FINAL**  
-- **Spec Layout Log_Puck – Wireframe OB Session v1.1 FINAL**  
-- **Checklist Sviluppatore – Log_Puck v1.2 FINAL**
-
-### Filtri consigliati nell'Archivio
-
-- Mostra tutte le OB Session con:
-  - **AI = ChatGPT (Layla)**
-  - **AI = Claude (Vela)**
-  - **AI = Gemini (Synapse)**
-  - **AI = Grok (Analysis)**
-  - **CT = Chat Specialistica**  
-  - **fIGA ≥ 80**  
-  - **CDC ≥ 8**
-
-</div>
--->
