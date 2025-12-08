@@ -60,7 +60,7 @@
           <a href="#" onclick="alert('Funzione revoca in arrivo'); return false;">Revoca Consenso Cookie</a>
         </small>
       </p>
-      <p><small>Log_Puck è un organismo ibrido umano-AI © {{ 'now' | date: '%Y' }}</small></p>
+      <p><small>Log_Puck è un organismo ibrido umano-AI © {{ "now" | date: "%Y" }}</small></p>
     </div>
   </footer>
 
@@ -94,7 +94,7 @@
     }
     .site-header, .site-footer {
       padding: 40px 0;
-      border-top: 1px solid var(--gray-border);
+      .site-header { border-bottom: 1px solid var(--gray-border); }
     }
     .site-header .container, .site-footer .container {
       display: flex;
