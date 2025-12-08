@@ -1,0 +1,166 @@
+---
+layout: default
+---
+<!-- 
+  Layout: Ob Session
+  Template per tutte le Ob Session di Log_Puck
+  Versione: 1.1 (fix slug coerenza)
+-->
+
+<!-- Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ page.title }}",
+  "inLanguage": "{{ page.lang | default: 'it' }}",
+  "datePublished": "{{ page.date | date_to_xmlschema }}",
+  "dateModified": "{{ page.date | date_to_xmlschema }}",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "{{ page.puck.name | default: 'Puck' }}"
+    },
+    {
+      "@type": "Person",
+      "name": "{{ page.ai.name }} ({{ page.ai.persona }})"
+    }
+  ],
+  "about": {
+    "@type": "Thing",
+    "name": "{{ page.title }}"
+  },
+  "keywords": {{ page.tags | jsonify }},
+  "articleSection": [
+    "Caos / Osservazione",
+    "Insights & Lezioni",
+    "Riferimenti Archivistici"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": {{ page.pck.figa }},
+    "bestRating": 100,
+    "worstRating": 0
+  },
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "CDC",
+      "value": {{ page.pck.cdc }},
+      "unitText": "0-10 scale"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "SC",
+      "value": {{ page.pck.sc }},
+      "unitText": "0-10 scale"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "JJ_PTA",
+      "value": {{ page.pck.jj_pta }},
+      "unitText": "0-10 scale"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "JJ_ATP",
+      "value": {{ page.pck.jj_atp }},
+      "unitText": "0-10 scale"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "CT",
+      "value": "{{ page.ct }}"
+    }
+  ]
+}
+</script>
+
+<!-- Main article -->
+<article class="ob-session" itemscope itemtype="https://schema.org/BlogPosting">
+  
+  <!-- Breadcrumb -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> &gt; 
+    <a href="/ob-session/">Ob Session</a> &gt; 
+    <span>{{ page.title }}</span>
+  </nav>
+
+  <!-- Header -->
+  <header class="ob-session-header">
+    <h1 itemprop="headline">{{ page.title }}</h1>
+    
+    {% if page.ai.persona and page.co_ai %}
+    <p class="ob-session-subtitle">({{ page.puck.name }} + {{ page.ai.name }}/{{ page.ai.persona }} + {{ page.co_ai[0].name }}/{{ page.co_ai[0].persona }})</p>
+    {% elsif page.ai.persona %}
+    <p class="ob-session-subtitle">({{ page.puck.name }} + {{ page.ai.name }}/{{ page.ai.persona }})</p>
+    {% endif %}
+
+    <div class="meta-ai">
+      <span class="meta-ai-primary">
+        {{ page.ai.name }} ({{ page.ai.persona }}) · {{ page.ct }}
+      </span>
+      <br>
+      <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+        {{ page.date | date: "%d %B %Y" }}
+      </time>
+    </div>
+  </header>
+
+  <!-- PCK Widget -->
+  {% include pck-widget.html
+      figa=page.pck.figa
+      cdc=page.pck.cdc
+      sc=page.pck.sc
+      jj_pta=page.pck.jj_pta
+      jj_atp=page.pck.jj_atp
+      ct=page.ct
+      ai_slug=page.ai.slug
+      ai_display=page.ai.name
+      ai_persona=page.ai.persona
+  %}
+
+  <!-- Quick links -->
+  <div class="pck-links">
+    <a href="/archivio/?ai={{ page.ai.slug }}">
+      Vedi tutte le sessioni con {{ page.ai.name }} ({{ page.ai.persona }})
+    </a>
+    ·
+    <a href="/archivio/?ct={{ page.ct | downcase | replace: ' ', '-' }}">
+      Filtra tutte le Ob Session con CT = {{ page.ct }}
+    </a>
+  </div>
+
+  <!-- TOC (if plugin available) -->
+  {% if site.plugins contains 'jekyll-toc' %}
+  <nav class="toc-container">
+    <h2 class="toc-title">Indice</h2>
+    {% toc %}
+  </nav>
+  {% endif %}
+
+  <!-- Content -->
+  <div class="ob-session-content" itemprop="articleBody">
+    {{ content }}
+  </div>
+
+  <!-- Meta footer -->
+  <footer class="ob-session-footer">
+    <div class="ob-session-meta-details">
+      <p><strong>AI:</strong> {{ page.ai.name }} ({{ page.ai.persona }}) · {{ page.ai.model }}</p>
+      {% if page.co_ai %}
+      <p><strong>Co-AI:</strong> 
+        {% for ai in page.co_ai %}
+          {{ ai.name }} ({{ ai.persona }}){% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+      </p>
+      {% endif %}
+      <p><strong>Ponte umano:</strong> {{ page.puck.name }}</p>
+      <p><strong>Tipo interazione:</strong> {{ page.ct }}</p>
+      <p><strong>Pubblicato:</strong> {{ page.date | date: "%d %B %Y" }}</p>
+    </div>
+  </footer>
+
+</article>
+
+
