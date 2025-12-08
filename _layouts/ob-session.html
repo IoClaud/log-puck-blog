@@ -167,6 +167,13 @@ layout: default
       {% endfor %}
     </ul>
     {% endif %}
+
+    <h3>AI partecipanti</h3>
+<ul>
+{% for ai in page.ai %}
+  <li><strong><a href="/ai/{{ ai.name | downcase }}/{{ ai.persona | downcase }}/">{{ ai.name }} ({{ ai.persona }})</a></strong></li>
+{% endfor %}
+</ul>
     
     {% if page.related_artefatti.size > 0 %}
     <h3 id="artefatti-tools-correlati">Artefatti & Tools correlati</h3>
