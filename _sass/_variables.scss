@@ -1,0 +1,329 @@
+// ============================================================================
+// LOG_PUCK - Design Tokens & Variables
+// Versione: 1.1 (+ bridge CSS custom properties)
+// Mood: Raw Technical Diary (Light Mode Warm)
+// ============================================================================
+
+// ----------------------------------------------------------------------------
+// COLOR PALETTE
+// ----------------------------------------------------------------------------
+
+// Base colors
+$color-bg-base: #F7F5EF;           // Cream background
+$color-text-primary: #1A1A1A;      // Main text
+$color-text-secondary: #4A4A4A;    // Secondary text
+$color-border: #D4D0C8;            // Neutral borders
+
+// Accent colors
+$color-accent-blue: #0057A3;       // Primary accent (links, highlights)
+$color-accent-gold: #C89F65;       // Secondary accent (warnings, mid-range)
+$color-accent-green: #4A7C59;      // Success, positive states
+$color-accent-red: #B54A2F;        // Errors, alerts, low values
+
+// PCK primitive colors (benchmark bars)
+// CDC – Coerenza Dati di Contesto
+// SC – Solidità Concettuale
+// JJ_PTA – Grado di libertà AI (Puck → AI)
+// JJ_ATP – Grado di controllo archivistico (AI → Puck)
+$color-pck-cdc: #0057A3;
+$color-pck-sc: #3D7E9B;
+$color-pck-jj-pta: #6BA3C4;
+$color-pck-jj-atp: #A27A4F;
+
+// Box & callout backgrounds
+$color-box-caos: #EFECE4;          // Caos section background (warm neutral)
+$color-box-callout: #E8F2F7;       // Callout/insight background (azure)
+$color-box-ref: #F3EEE6;           // Reference archive background (light beige)
+
+// Gauge colors (fIGA ranges)
+$color-gauge-high: #0057A3;        // 71-100 (blue)
+$color-gauge-mid: #C89F65;         // 41-70 (gold)
+$color-gauge-low: #B54A2F;         // 0-40 (red)
+$color-gauge-track: #E0E0E0;       // Background track
+
+// Interactive states
+$color-link: $color-accent-blue;
+$color-link-hover: darken($color-accent-blue, 10%);
+$color-link-visited: darken($color-accent-blue, 5%);
+$color-focus-outline: $color-accent-blue;
+
+// ----------------------------------------------------------------------------
+// TYPOGRAPHY
+// ----------------------------------------------------------------------------
+
+// Font families
+$font-family-title: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+$font-family-body: 'Source Serif Pro', Georgia, 'Times New Roman', serif;
+$font-family-mono: 'Fira Code', 'Courier New', monospace;
+
+// Font sizes
+$font-size-h1: 48px;
+$font-size-h2: 32px;
+$font-size-h3: 24px;
+$font-size-h4: 20px;
+$font-size-body: 18px;
+$font-size-small: 16px;
+$font-size-tiny: 14px;
+
+// Font sizes - mobile (≤768px)
+$font-size-h1-mobile: 36px;
+$font-size-h2-mobile: 28px;
+$font-size-h3-mobile: 22px;
+$font-size-h4-mobile: 18px;
+$font-size-body-mobile: 17px;
+
+// Font weights
+$font-weight-light: 300;
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Line heights
+$line-height-tight: 1.2;
+$line-height-normal: 1.4;
+$line-height-relaxed: 1.55;
+$line-height-loose: 1.7;
+
+// ----------------------------------------------------------------------------
+// SPACING
+// ----------------------------------------------------------------------------
+
+// Base spacing unit (4px grid)
+$spacing-unit: 4px;
+
+// Spacing scale
+$spacing-xs: $spacing-unit * 2;    // 8px
+$spacing-sm: $spacing-unit * 3;    // 12px
+$spacing-md: $spacing-unit * 4;    // 16px
+$spacing-lg: $spacing-unit * 5;    // 20px
+$spacing-xl: $spacing-unit * 8;    // 32px
+$spacing-2xl: $spacing-unit * 10;  // 40px
+$spacing-3xl: $spacing-unit * 16;  // 64px
+$spacing-4xl: $spacing-unit * 24;  // 96px
+
+// Semantic spacing
+$spacing-section: $spacing-4xl;    // Between major sections (96px)
+$spacing-block: $spacing-2xl;      // Between content blocks (40px)
+$spacing-paragraph: $spacing-lg;   // After headings, between paragraphs (20px)
+$spacing-inline: $spacing-sm;      // Inline elements (12px)
+
+// ----------------------------------------------------------------------------
+// LAYOUT
+// ----------------------------------------------------------------------------
+
+// Container widths
+$container-max-width: 920px;       // Main content container
+$content-width: 640px;             // Optimal text width (after TOC)
+$toc-width: 240px;                 // Table of contents width
+
+// Breakpoints
+$breakpoint-desktop: 1024px;       // TOC layout change
+$breakpoint-tablet: 768px;         // Grid adjustments, font scaling
+$breakpoint-mobile: 480px;         // Full mobile stack
+
+// Z-index scale
+$z-index-base: 1;
+$z-index-toc: 10;
+$z-index-overlay: 50;
+$z-index-modal: 100;
+
+// ----------------------------------------------------------------------------
+// COMPONENTS
+// ----------------------------------------------------------------------------
+
+// Borders
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-width: 1px;
+$border-width-thick: 2px;
+
+// Shadows (minimal, for depth)
+$shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+$shadow-md: 0 2px 6px rgba(0, 0, 0, 0.12);
+
+// Transitions
+$transition-fast: 0.15s ease;
+$transition-normal: 0.3s ease;
+$transition-slow: 0.6s ease;
+
+// PCK Widget specific
+$pck-gauge-size: 120px;            // Diameter of semicircle gauge
+$pck-gauge-stroke: 8px;            // Stroke width
+$pck-bar-height: 8px;              // Height of primitive bars
+$pck-bar-label-width: 80px;        // Width of bar labels
+$pck-bar-value-width: 60px;        // Width of value display
+
+// TOC specific
+$toc-sticky-top: 80px;             // Distance from top when sticky
+$toc-overlay-bg: rgba(247, 245, 239, 0.95); // Semi-transparent bg for mobile overlay
+
+// ----------------------------------------------------------------------------
+// ACCESSIBILITY
+// ----------------------------------------------------------------------------
+
+// Focus states
+$focus-outline-width: 3px;
+$focus-outline-offset: 2px;
+$focus-outline-color: $color-focus-outline;
+
+// ----------------------------------------------------------------------------
+// CSS CUSTOM PROPERTIES BRIDGE
+// Mapping Sass variables → CSS variables for browser compatibility
+// ----------------------------------------------------------------------------
+
+:root {
+  /* Base colors */
+  --bg-main: #{$color-bg-base};
+  --text-main: #{$color-text-primary};
+  --text-secondary: #{$color-text-secondary};
+  --gray-border: #{$color-border};
+  --gray-separator: #{$color-border};
+
+  /* Accent colors */
+  --accent-blue: #{$color-accent-blue};
+  --accent-oro: #{$color-accent-gold};
+  --accent-green: #{$color-accent-green};
+  --accent-red: #{$color-accent-red};
+
+  /* PCK primitive colors */
+  --pck-cdc: #{$color-pck-cdc};
+  --pck-sc: #{$color-pck-sc};
+  --pck-jj-pta: #{$color-pck-jj-pta};
+  --pck-jj-atp: #{$color-pck-jj-atp};
+
+  /* Gauge colors */
+  --gauge-high: #{$color-gauge-high};
+  --gauge-mid: #{$color-gauge-mid};
+  --gauge-low: #{$color-gauge-low};
+  --gauge-track: #{$color-gauge-track};
+
+  /* Box & section backgrounds */
+  --caos-bg: #{$color-box-caos};
+  --caos-border: #{$color-border};
+  --callout-bg: #{$color-box-callout};
+  --callout-bar: #{$color-pck-sc};
+  --ref-bg: #{$color-box-ref};
+
+  /* Typography */
+  --font-title: #{$font-family-title};
+  --font-body: #{$font-family-body};
+  --font-mono: #{$font-family-mono};
+
+  --font-h1: #{$font-size-h1};
+  --font-h2: #{$font-size-h2};
+  --font-h3: #{$font-size-h3};
+  --font-h4: #{$font-size-h4};
+  --font-body-size: #{$font-size-body};
+  --font-small: #{$font-size-small};
+  --font-tiny: #{$font-size-tiny};
+
+  --font-weight-regular: #{$font-weight-regular};
+  --font-weight-semibold: #{$font-weight-semibold};
+  --font-weight-bold: #{$font-weight-bold};
+
+  --line-height-body: #{$line-height-relaxed};
+
+  /* Spacing */
+  --spacing-section: #{$spacing-section};
+  --spacing-block: #{$spacing-block};
+  --spacing-paragraph: #{$spacing-paragraph};
+  --spacing-inline: #{$spacing-inline};
+
+  /* Layout */
+  --container-max: #{$container-max-width};
+  --content-width: #{$content-width};
+  --toc-width: #{$toc-width};
+
+  /* Components */
+  --border-radius: #{$border-radius-md};
+  --border-width: #{$border-width};
+  --shadow-sm: #{$shadow-sm};
+  --transition-normal: #{$transition-normal};
+
+  /* Focus */
+  --focus-outline-width: #{$focus-outline-width};
+  --focus-outline-color: #{$color-focus-outline};
+
+  /* Z-index */
+  --z-toc: #{$z-index-toc};
+  --z-overlay: #{$z-index-overlay};
+}
+
+// Responsive font sizes (Mobile ≤768px)
+@media (max-width: $breakpoint-tablet) {
+  :root {
+    --font-h1: #{$font-size-h1-mobile};
+    --font-h2: #{$font-size-h2-mobile};
+    --font-h3: #{$font-size-h3-mobile};
+    --font-h4: #{$font-size-h4-mobile};
+    --font-body-size: #{$font-size-body-mobile};
+  }
+}
+
+// ----------------------------------------------------------------------------
+// MIXINS
+// ----------------------------------------------------------------------------
+
+// Responsive breakpoints
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $breakpoint-desktop - 1px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin mobile-small {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+// Focus visible for keyboard navigation
+@mixin focus-visible {
+  &:focus-visible {
+    outline: $focus-outline-width solid $focus-outline-color;
+    outline-offset: $focus-outline-offset;
+  }
+}
+
+// Truncate text with ellipsis
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Clearfix for floats
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Visually hidden (accessible to screen readers)
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-s
+
+
