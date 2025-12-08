@@ -163,6 +163,7 @@ layout: default
   </header>
 
   <!-- PCK Widget -->
+  {% assign first_ai = page.ai[0] %}
   {% include pck-widget.html
       figa=page.pck.figa
       cdc=page.pck.cdc
@@ -170,9 +171,9 @@ layout: default
       jj_pta=page.pck.jj_pta
       jj_atp=page.pck.jj_atp
       ct=page.ct
-      ai_slug=page.ai[0].slug
-      ai_display=page.ai[0].name
-      ai_persona=page.ai[0].persona
+      ai_slug=first_ai.slug
+      ai_display=first_ai.name
+      ai_persona=first_ai.persona
   %}
   
   <!-- Quick links -->
