@@ -18,7 +18,7 @@ valutate con il benchmark PCK e aperte al Caos controllato.
 ## Ultime Ob Session
 
 {% for post in site.ob-session limit:5 %}
-### [{{ post.title }}]({{ post.url }})
+### [{{ post.title }}]({{ post.url | relative_url }})
 {{ post.ai.name }} ({{ post.ai.persona }}) · fIGA {{ post.pck.figa }}/100  
 {{ post.date | date: "%d %B %Y" }} · {{ post.ct }}
 
