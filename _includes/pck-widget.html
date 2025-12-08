@@ -1,0 +1,112 @@
+<!-- _includes/pck-widget.html -->
+<!-- PCK Widget - Benchmark visuale Ob Session -->
+<!-- Parametri: figa, cdc, sc, jj_pta, jj_atp, ct, ai -->
+
+<div class="pck-widget">
+  
+  <!-- Gauge fIGA principale -->
+  <div class="pck-gauge-container">
+    <svg class="pck-gauge" viewBox="0 0 140 80" width="140" height="80">
+      <!-- Traccia di sfondo -->
+      <path 
+        d="M 10 70 A 60 60 0 0 1 130 70" 
+        fill="none" 
+        stroke="var(--gray-border)" 
+        stroke-width="8" 
+        stroke-linecap="round"
+      />
+      
+      <!-- Traccia progressiva colorata -->
+      {% comment %}
+      188.4 ≈ lunghezza arco semicerchio (π * 60).
+      figa_length = 188.4 * (figa/100)
+      dashoffset = 188.4 - figa_length
+      {% endcomment %}
+      {% assign figa_length = include.figa | times: 1.884 %}
+      
+      {% if include.figa >= 71 %}
+        {% assign gauge_color = "var(--accent-blue)" %}
+      {% elsif include.figa >= 41 %}
+        {% assign gauge_color = "var(--accent-oro)" %}
+      {% else %}
+        {% assign gauge_color = "var(--accent-red)" %}
+      {% endif %}
+      
+      <path 
+        d="M 10 70 A 60 60 0 0 1 130 70" 
+        fill="none" 
+        stroke="{{ gauge_color }}" 
+        stroke-width="8" 
+        stroke-linecap="round"
+        stroke-dasharray="188.4"
+        stroke-dashoffset="{{ 188.4 | minus: figa_length }}"
+        class="gauge-fill"
+      />
+    </svg>
+    
+    <!-- Valore fIGA -->
+    <div class="pck-gauge-value">
+      <span class="figa-number" data-tooltip="Qualità archivistica complessiva della sessione (0–100)">{{ include.figa }}</span>
+      <span class="figa-label">/100</span>
+    </div>
+    <div class="pck-gauge-label">fIGA</div>
+  </div>
+
+  <!-- Indici primitivi -->
+  <div class="pck-primitives">
+    
+    <!-- CDC -->
+    <div class="pck-bar">
+      <span class="pck-bar-label" data-tooltip="CDC – Coerenza Dati di Contesto (stabilità del frame e dei vincoli)">CDC</span>
+      <div class="pck-bar-track">
+        <div class="pck-bar-fill" style="width: {{ include.cdc | times: 10 }}%; background-color: var(--pck-cdc);"></div>
+      </div>
+      <span class="pck-bar-value">{{ include.cdc }}/10</span>
+    </div>
+    
+    <!-- SC -->
+    <div class="pck-bar">
+      <span class="pck-bar-label" data-tooltip="SC – Solidità Concettuale (robustezza delle strutture e delle scelte)">SC</span>
+      <div class="pck-bar-track">
+        <div class="pck-bar-fill" style="width: {{ include.sc | times: 10 }}%; background-color: var(--pck-sc);"></div>
+      </div>
+      <span class="pck-bar-value">{{ include.sc }}/10</span>
+    </div>
+    
+    <!-- JJ_PTA -->
+    <div class="pck-bar">
+      <span class="pck-bar-label" data-tooltip="JJ_PTA – Grado di libertà AI (Puck → AI): spazio di manovra concesso alla macchina">JJ_PTA</span>
+      <div class="pck-bar-track">
+        <div class="pck-bar-fill" style="width: {{ include.jj_pta | times: 10 }}%; background-color: var(--pck-jj-pta);"></div>
+      </div>
+      <span class="pck-bar-value">{{ include.jj_pta }}/10</span>
+    </div>
+    
+    <!-- JJ_ATP -->
+    <div class="pck-bar">
+      <span class="pck-bar-label" data-tooltip="JJ_ATP – Grado di controllo archivistico (AI → Puck): quanto il sistema contiene o rovescia il flusso">JJ_ATP</span>
+      <div class="pck-bar-track">
+        <div class="pck-bar-fill" style="width: {{ include.jj_atp | times: 10 }}%; background-color: var(--pck-jj-atp);"></div>
+      </div>
+      <span class="pck-bar-value">{{ include.jj_atp }}/10</span>
+    </div>
+    
+  </div>
+
+  <!-- CT e Link -->
+  <div class="pck-footer">
+    <span class="pck-ct" data-tooltip="Tipologia di interazione in questa Ob Session">CT: {{ include.ct }}</span>
+    <div class="pck-links">
+      <a href="/archivio/?ai={{ include.ai | downcase | replace: ' ', '-' }}" class="pck-link">
+        Filtra per {{ include.ai }}
+      </a>
+      <a href="/archivio/?ct={{ include.ct | downcase | replace: ' ', '-' }}" class="pck-link">
+        Filtra per CT: {{ include.ct }}
+      </a>
+    </div>
+  </div>
+  
+</div>
+
+
+
