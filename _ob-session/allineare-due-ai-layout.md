@@ -19,17 +19,16 @@ tags:
   - benchmark
   - layout-blog
 ai:
-  name: "Claude"
-  persona: "Vela"
-  model: "Claude Sonnet 4.5"
-  role: "Analisi strutturale e validazione"
-  slug: "claude-vela"
-ai:
-  name: "ChatGPT"
-  persona: "Layla"
-  model: "ChatGPT GPT 5.1"
-  role: "Architettura visuale e layout"
-  slug: "chatgpt-layla"
+  - name: "Claude"
+    persona: "Vela"
+    model: "Claude Sonnet 4"
+    role: "Analisi strutturale e validazione"
+    slug: "claude-vela"
+  - name: "ChatGPT"
+    persona: "Layla"
+    model: "GPT"
+    role: "Architettura visuale e layout"
+    slug: "chatgpt-layla"
 puck:
   name: "Puck"
   role: "Ponte umano e commit decisionale"
@@ -41,6 +40,41 @@ pck:
   jj_pta: 8
   jj_atp: 2
 schema_type: "BlogPosting"
+related_sessions:
+  - slug: "definizione-benchmark-pck"
+    title: "Definizione del Benchmark PCK"
+    ai_slug: "claude-vela"
+    note: "Introduce CDC, SC, JJ_PTA, JJ_ATP e fIGA"
+  
+  - slug: "synapse-struttura-log-puck"
+    title: "Synapse – Struttura Log_Puck 2.0"
+    ai_slug: "gemini-syncope"
+    note: "Macro-architettura del sistema"
+  
+  - slug: "mappa-conformita-legale"
+    title: "Mappa della Conformità Legale del blog"
+    ai_slug: "chatgpt-layla"
+    note: "Vincoli GDPR e impatto su layout"
+
+related_artefatti:
+  - title: "Spec Layout Log_Puck – Wireframe Home v1.1 FINAL"
+    url: "/artefatti-tools/wireframe-home-v1-1/"
+  
+  - title: "Spec Layout Log_Puck – Wireframe Ob Session v1.1 FINAL"
+    url: "/artefatti-tools/wireframe-ob-session-v1-1/"
+
+archivio_filters:
+  - label: "AI = Claude (Vela)"
+    url: "/archivio/?ai=claude-vela"
+  
+  - label: "CT = Chat Specialistica"
+    url: "/archivio/?ct=chat-specialistica"
+  
+  - label: "fIGA ≥ 80"
+    url: "/archivio/?figa_min=80"
+  
+  - label: "CDC ≥ 8"
+    url: "/archivio/?cdc_min=8"
 ---
 
 <!--
