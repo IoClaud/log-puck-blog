@@ -1,5 +1,6 @@
 # No theme - use custom layouts only
 theme: 
+
 title: "Log_Puck"
 description: "Organismo ibrido umano-AI che documenta pattern cognitivi trasparenti"
 baseurl: "/log-puck-blog"
@@ -17,6 +18,15 @@ collections:
   ob-session:
     output: true
     permalink: /ob-session/:slug/
+  benchmark:
+    output: true
+    permalink: /benchmark/:slug/
+  caos:
+    output: true
+    permalink: /caos/:slug/
+  insights:
+    output: true
+    permalink: /insights/:slug/
 
 # Plugins
 plugins:
@@ -34,3 +44,18 @@ defaults:
       type: ob-session
     values:
       layout: ob-session
+  - scope:
+      path: ""
+      type: benchmark
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: caos
+    values:
+      layout: default
+  - scope:
+      path: ""
+      type: insights
+    values:
+      layout: default
