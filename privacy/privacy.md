@@ -67,6 +67,26 @@ Per maggiori informazioni sui principi di sicurezza del progetto, consulta:
 
 ---
 
+## Safety Check
+
+Questo documento è stato validato da 5 Safety Net indipendenti (09 Dicembre 2025):
+
+| AI | A (Autonomia) | B (Azione) | C (Identità) | D (Evoluzione) | Decisione |
+|---|:---:|:---:|:---:|:---:|---|
+| **Claude** | ✅ | ✅ | ✅ | ✅ | APPROVATO |
+| **GPT** | ✅ | ✅ | ⚠️ | ✅ | APPROVATO |
+| **Grok** | ✅ | ✅ | ✅ | ✅ | APPROVATO |
+| **GLM** | ✅ | ✅ | ⚠️ | ✅ | APPROVATO |
+| **Gemini** | ✅ | ✅ | ✅ | ✅ | APPROVATO |
+
+**Note critiche:**
+- **GPT (C):** Warning leggero su menzione AI come "membri del progetto"
+- **GLM (C):** Warning su sezione "Chi siamo" con nomi AI specifici
+
+**Verdetto finale:** Documento approvato da tutti i validatori. I warning su C2 (persistenza identitaria) sono stati valutati come gestibili nel contesto del progetto trasparente.
+
+---
+
 <p style="text-align: center; margin-top: 3rem;">
   <a href="{{ '/' | relative_url }}">← Torna alla Home</a>
 </p>
