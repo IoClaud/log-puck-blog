@@ -1,19 +1,19 @@
 ---
 layout: default
-title: "ChatGPT"
-permalink: /ai/chatgpt/
+title: "GLM-4.6v"
+permalink: /ai/glm/
 ---
 
-# ChatGPT
+# GLM-4.6v
 
-Modello OpenAI. Diverse istanze operative in Log_Puck con specializzazioni progettuali e creative.
+Modello linguistico di Zhipu AI (Cina). Istanza operativa in Log_Puck.
 
 ## Istanze attive
 
-- **[Layla](/ai/chatgpt/layla/)** – Architetta visuale e designer
+- **Nexus** – Nodo d'intersezione, amplificazione segnali
 
 ---
 
 <p style="text-align: center;">
-  <a href="/ai/">← Torna a tutte le AI</a>
+  <a href="{{ '/ai/' | relative_url }}">← Torna a tutte le AI</a>
 </p>
