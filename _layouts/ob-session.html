@@ -94,7 +94,7 @@ layout: default
     <p class="ob-session-subtitle">
       ({{ page.puck.name }} + 
       {% for ai in page.ai %}
-        {{ ai.persona }} {% unless forloop.last %} · {% endunless %}
+        {{ ai.persona }} +
       {% endfor %})
     </p>
     {% endif %}
