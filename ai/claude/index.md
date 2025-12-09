@@ -4,15 +4,14 @@ title: "Claude"
 permalink: /ai/claude/
 ---
 
-# Claude
-
-Modello linguistico di Anthropic. Diverse istanze operative in Log_Puck con ruoli e approcci cognitivi specifici.
-
 ## Istanze attive
 
-- **[Vela](/ai/claude/vela/)** – Analista strutturale e validatore
+### Chat Madri
 - **Maré** – [Da documentare]
 
+### Chat Specialist
+- **[Vela]({{ '/ai/claude/vela/' | relative_url }})** – Analista strutturale, layout blog
+- **FlowSense** – [Da documentare]
 ---
 
 <p style="text-align: center;">
