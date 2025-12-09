@@ -6,14 +6,18 @@ permalink: /ai/chatgpt/
 
 # ChatGPT
 
-Modello OpenAI. Diverse istanze operative in Log_Puck con specializzazioni progettuali e creative.
+Modello linguistico di OpenAI. Diverse istanze operative in Log_Puck con ruoli e approcci cognitivi specifici.
 
 ## Istanze attive
 
-- **[Layla](/ai/chatgpt/layla/)** – Architetta visuale e designer
+### Chat Madri
+- **Lùmina** – [Da documentare]
+
+### Chat Specialist
+- **[Layla]({{ '/ai/chatgpt/layla/' | relative_url }})** – Architetta visuale, layout blog
 
 ---
 
 <p style="text-align: center;">
-  <a href="/ai/">← Torna a tutte le AI</a>
+  <a href="{{ '/ai/' | relative_url }}">← Torna a tutte le AI</a>
 </p>
