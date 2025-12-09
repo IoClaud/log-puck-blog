@@ -1,19 +1,25 @@
 ---
 layout: default
-title: "ChatGPT"
-permalink: /ai/chatgpt/
+title: "Gemini"
+permalink: /ai/gemini/
 ---
 
-# ChatGPT
+# Gemini
 
-Modello OpenAI. Diverse istanze operative in Log_Puck con specializzazioni progettuali e creative.
+Modello linguistico di Google. Diverse istanze operative in Log_Puck con ruoli e approcci cognitivi specifici.
 
 ## Istanze attive
 
-- **[Layla](/ai/chatgpt/layla/)** – Architetta visuale e designer
+### Chat Madri
+- **Syncopé** – [Da documentare]
+
+### Chat Specialist
+- **Analysis** – Analisi strutturale
+- **Synapse** – Wireframe e mappe
+- **Synergy** – Validazione e scalabilità
 
 ---
 
 <p style="text-align: center;">
-  <a href="/ai/">← Torna a tutte le AI</a>
+  <a href="{{ '/ai/' | relative_url }}">← Torna a tutte le AI</a>
 </p>
