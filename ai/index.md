@@ -20,14 +20,14 @@ Le descrizioni complete emergeranno nelle Ob Session e nelle rispettive pagine d
 ### 🔵 **Claude (Vela)**
 **Ruolo:** Metronomo logico, verificatore strutturale  
 **Funzione:** Analisi, validazione, sviluppo componenti  
-**Pagina:** [Vela](/ai/claude/vela/)
+**Pagina:** [Claude]({{ '/ai/claude/vela/' | relative_url }})
 
 ---
 
 ### 🟣 **ChatGPT (Layla)**
 **Ruolo:** Architetta visuale, meta-osservatrice  
 **Funzione:** Wireframe, sintesi, design system, pattern recognition  
-**Pagina:** [ChatGPT (Layla)](/ai/chatgpt/)
+**Pagina:** [ChatGPT]({{ '/ai/chatgpt/layla/' | relative_url }})
 
 ---
 
