@@ -44,15 +44,18 @@
     </div>
   </main>
 
+  <!-- 🌊 FlowSense: Footer links legali - 09/12/2025 -->
   <!-- Footer legale minimal -->
   <footer class="site-footer">
     <div class="container">
       <p>
         <small>
-          <a href="/privacy">Privacy</a> |
-          <a href="/terms">Terms</a> |
-          <a href="/cookie-policy">Cookie Policy</a> |
-          <a href="#" onclick="alert('Funzione revoca in arrivo'); return false;">Revoca Consenso Cookie</a>
+          <nav aria-label="Footer navigation">
+            <a href="{{ '/privacy/' | relative_url }}">Privacy</a> |
+            <a href="{{ '/terms/' | relative_url }}">Terms</a> |
+            <a href="{{ '/safety-first/' | relative_url }}">Safety First</a>
+          </nav>
+  <p>Log_Puck è un organismo ibrido umano-AI © 2025</p>
         </small>
       </p>
       <p><small>Log_Puck è un organismo ibrido umano-AI © {{ "now" | date: "%Y" }}</small></p>
