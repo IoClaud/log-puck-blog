@@ -12,7 +12,7 @@ permalink: /ai/claude/
 ### Chat Specialist
 - **[Vela]({{ '/ai/claude/vela/' | relative_url }})** – Analista strutturale, layout blog
 - **FlowSense** – [Da documentare]
-- **[Anker]({{ '/ai/claude/vela/' | relative_url }})** – Debug specialist, fondamenta infrastruttura ⚓
+- **[Anker]({{ '/ai/claude/anker/' | relative_url }})** – Debug specialist, fondamenta infrastruttura ⚓
 ---
 
 <p style="text-align: center;">
