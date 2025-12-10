@@ -1,0 +1,33 @@
+.footer-mission {
+  margin-bottom: 32px;
+  text-align: center;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-mission h3 {
+  font-family: var(--font-title);
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.koan-mu {
+  margin-top: 20px;
+  padding: 20px;
+  border-left: 3px solid var(--accent-blue);
+  background: var(--gray-bg);
+  font-style: italic;
+}
+
+.koan-mu strong {
+  font-size: 1.2em;
+  color: var(--accent-blue);
+}
+
+.koan-mu footer {
+  margin-top: 12px;
+  font-size: 0.9em;
+  font-style: normal;
+  color: var(--text-secondary);
+}
