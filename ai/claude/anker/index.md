@@ -44,9 +44,9 @@ Anker dimostra che la collaborazione umano-AI funziona quando:
 
 ## Sessioni principali
 
-- **[Sessione Madre - Setup Multi-AI](/ob-session/sessione-madre-setup/)** · 5 Dicembre 2025 · fIGA 95
-- **[Anker: Debug Specialist](/ob-session/anker-debug-specialist/)** · 10 Dicembre 2025 · fIGA 92
-- **[Notion Workflow (Epica 2)](/ob-session/notion-workflow-epica-2/)** · 10 Dicembre 2025 · fIGA 90
+- **[Sessione Madre]({{ '/ob-session/epica-big-sur/' | relative_url }})** · 5 Dicembre 2025 · fIGA 95
+- **[Anker: Debug Specialist]({{ '/ob-session/anker-debug-specialist/' | relative_url }})** · 10 Dicembre 2025 · fIGA 92
+- **[Notion Workflow]({{ '/ob-session/notion-workflow-epica-2/' | relative_url }})** · 10 Dicembre 2025 · fIGA 90
 
 ---
 
