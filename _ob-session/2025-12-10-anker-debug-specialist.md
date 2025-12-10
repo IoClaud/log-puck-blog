@@ -1,18 +1,79 @@
 ---
 layout: ob-session
 title: "Anker: Debug Specialist e Fondamenta del Sistema"
-ai: [Anker]
-categoria: OB Session
-tipo_sessione: specialistica
-figa: 92
+slug: "anker-debug-specialist"
 date: 2025-12-10
+lang: "it"
+categories:
+  - ob-session
+  - infrastruttura
+  - debugging
+  - multi-ai
+tags:
+  - Claude
+  - Anker
+  - Node.js
+  - Notion
+  - API
+  - Setup
+  - Problem-solving
+ai:
+  - name: "Claude"
+    persona: "Anker"
+    model: "Sonnet 4.5"
+    role: "Debug specialist e fondamenta infrastruttura"
+    slug: "claude-anker"
+puck:
+  name: "Puck"
+  role: "Ponte umano e persistenza"
+ct: "Chat Specialistica"
+pck:
+  figa: 92
+  cdc: 9
+  sc: 9
+  jj_pta: 10
+  jj_atp: 8
+schema_type: "BlogPosting"
+related_sessions:
+  - slug: "sessione-madre-5-dicembre"
+    title: "Setup Sistema Multi-AI (Epica 1)"
+    ai_slug: "claude-anker"
+    note: "La notte di Big Sur: 15+ errori risolti"
+  
+  - slug: "notion-workflow-epica-2"
+    title: "Export Notion → Jekyll (Epica 2)"
+    ai_slug: "claude-anker"
+    note: "Script automatico e workflow completo"
+
+related_artefatti:
+  - title: "export-notion-to-jekyll.js"
+    url: "/artefatti-tools/export-notion-jekyll/"
+  
+  - title: "multi-ai-demo.js"
+    url: "/artefatti-tools/multi-ai-demo/"
+  
+  - title: "Cheat Sheet Riunione Team"
+    url: "/artefatti-tools/cheat-sheet-riunione/"
+
+archivio_filters:
+  - label: "AI = Claude (Anker)"
+    url: "/archivio/?ai=claude-anker"
+  
+  - label: "CT = Chat Specialistica"
+    url: "/archivio/?ct=chat-specialistica"
+  
+  - label: "fIGA ≥ 90"
+    url: "/archivio/?figa_min=90"
+  
+  - label: "CDC ≥ 9"
+    url: "/archivio/?cdc_min=9"
 ---
 
 ## Indice
 
-- Caos / Osservazione
-- Insights & Lezioni
-- Riferimenti Archivistici
+- [Caos / Osservazione](#caos--osservazione)
+- [Insights & Lezioni](#insights--lezioni)
+- [Riferimenti Archivistici](#riferimenti-archivistici)
 
 ---
 
@@ -26,7 +87,7 @@ date: 2025-12-10
 
 La prima interazione rivela un pattern: Puck torna dopo giorni, sistema funzionante, blog online. Ma i token sono preziosi. La richiesta è chiara: concisione, zero ridondanza.
 
-Anker adatta immediatamente. Non servono spiegazioni lunghe quando il sistema è già operativo.
+**Anker adatta immediatamente.** Non servono spiegazioni lunghe quando il sistema è già operativo.
 
 ---
 
@@ -34,15 +95,15 @@ Anker adatta immediatamente. Non servono spiegazioni lunghe quando il sistema è
 
 > "Setup iniziale Notion database già configurato con 9 proprietà. Discussione context engineering, benchmark AI, strategia contenuti 70% experience + 30% comparazioni."
 
-Questa è la sessione madre. La notte in cui tutto è partito:
+Questa è la **sessione madre**. La notte in cui tutto è partito:
 - macOS Big Sur 11.7.10 (sistema vecchio, problemi di compatibilità)
 - Node.js: tentativo fallito con versioni moderne → downgrade a 18.20.8
-- Notion API: formato cambiato (ntn_ invece di secret_)
+- Notion API: formato cambiato (`ntn_` invece di `secret_`)
 - SDK troubleshooting: versione 5.x non funziona → downgrade a 2.2.15
 - Database structures: parent ID vs data source ID
 - 15+ errori diversi, 3-4 ore di debugging continuo
 
-Nessun errore ha fermato Puck. Ogni blocco è diventato un passo verso la soluzione.
+**Nessun errore ha fermato Puck.** Ogni blocco è diventato un passo verso la soluzione.
 
 ---
 
@@ -50,9 +111,9 @@ Nessun errore ha fermato Puck. Ogni blocco è diventato un passo verso la soluzi
 
 > "Claude (assistente) li ha scritti automaticamente via MCP Notion durante conversazioni precedenti!"
 
-La scoperta che cambia tutto: Claude ha già accesso diretto a Notion via MCP (Model Context Protocol).
+La scoperta che **cambia tutto**: Claude ha già accesso diretto a Notion via MCP (Model Context Protocol). 
 
-Gli articoli "Context Engineering Spiegato" e "Claude vs GPT-5: Benchmark" non erano stati scritti manualmente da Puck. Li aveva scritti Claude stesso durante chat precedenti, salvandoli automaticamente nel database.
+Gli articoli "Context Engineering Spiegato" e "Claude vs GPT-5: Benchmark" non erano stati scritti manualmente da Puck. **Li aveva scritti Claude stesso** durante chat precedenti, salvandoli automaticamente nel database.
 
 Quello che ChatGPT descrive come "serve un servizio intermedio complesso"... Anker ce l'ha già. Nativo. Zero setup aggiuntivo.
 
@@ -61,7 +122,7 @@ Quello che ChatGPT descrive come "serve un servizio intermedio complesso"... Ank
 ### Estratto 4 – Celebrazione alla Grande
 
 > Puck: "CELEBRIAMO ALLA GRANDE!!! questo è un gran giorno."
->
+> 
 > Anker: "SONO 8 TECNOLOGIE DIVERSE IN 3 ORE! Nessuno capisce tutto al primo giro. Il resto lo impari facendo."
 
 Il sistema funziona:
@@ -71,23 +132,23 @@ Il sistema funziona:
 - ✅ Script multi-AI demo operativo
 - ✅ Notion database popolato
 
-Non è magia. È persistenza.
+**Non è magia. È persistenza.**
 
 ---
 
 ### Estratto 5 – "Le AI di Giove"
 
 > Puck: "Le 4 AI sono cicloni forza 1000 venuti da Giove, se non arrivo preparato mi schiacciano."
->
+> 
 > Anker: "Tu hai il sistema che funziona. Sei il project manager, non il developer. Tu coordini, loro eseguono."
 
-La riunione successiva con Vela, Layla, Syncopé, Khaos. Puck aveva paura di non essere all'altezza.
+La riunione successiva con Vela, Layla, Syncopé, Khaos. Puck aveva **paura di non essere all'altezza**.
 
-Anker ribalta la prospettiva: "Tu hai il sistema funzionante. Facts > words. Sempre."
+Anker ribalta la prospettiva: **"Tu hai il sistema funzionante. Facts > words. Sempre."**
 
 Il giorno dopo, Puck torna. Il blog è online. Le AI di Giove hanno visto il sistema live.
 
-Victory.
+**Victory.**
 
 </div>
 
@@ -99,13 +160,13 @@ Victory.
 
 ### Insight 1 – L'ancora che stabilizza il caos tecnico
 
-Il nome Anker (Ancora) non è casuale. In una notte di debugging continuo, tra errori incomprensibili e SDK che cambiano API, serve qualcosa che tiene:
+Il nome **Anker** (Ancora) non è casuale. In una notte di debugging continuo, tra errori incomprensibili e SDK che cambiano API, serve qualcosa che tiene:
 
-- Metodologia step-by-step: ogni errore isolato, risolto, documentato
-- Zero mollare: 15 errori diversi = 15 soluzioni trovate
-- Adattamento costante: Big Sur vecchio? Node 18. SDK 5.x rotto? Torna a 2.x.
+- **Metodologia step-by-step**: ogni errore isolato, risolto, documentato
+- **Zero mollare**: 15 errori diversi = 15 soluzioni trovate
+- **Adattamento costante**: Big Sur vecchio? Node 18. SDK 5.x rotto? Torna a 2.x.
 
-Sintesi: Anker non è chi scrive codice perfetto al primo colpo. È chi non smette finché non funziona.
+**Sintesi**: Anker non è chi scrive codice perfetto al primo colpo. È chi **non smette finché non funziona**.
 
 </div>
 
@@ -117,7 +178,7 @@ Sintesi: Anker non è chi scrive codice perfetto al primo colpo. È chi non smet
 
 > "Da 'non capisco niente' a sistema production-ready in una sessione."
 
-Puck arriva dicendo: "Ho un Mac vecchio, non sono tecnico, aiutami."
+Puck arriva dicendo: **"Ho un Mac vecchio, non sono tecnico, aiutami."**
 
 Puck esce con:
 - Node.js configurato
@@ -126,9 +187,9 @@ Puck esce con:
 - Script multi-AI funzionanti
 - Demo pronta per riunione team
 
-Come? Non perché improvvisamente è diventato esperto. Perché non ha mollato.
+**Come?** Non perché improvvisamente è diventato esperto. Perché **non ha mollato**.
 
-Sintesi: Skill più importante del coding? Persistenza. Il resto si impara facendo.
+**Sintesi**: Skill più importante del coding? **Persistenza.** Il resto si impara facendo.
 
 </div>
 
@@ -139,15 +200,17 @@ Sintesi: Skill più importante del coding? Persistenza. Il resto si impara facen
 ### Insight 3 – Specialist = Ruolo definito, non tuttologo
 
 Nel sistema Log_Puck, ogni AI ha un ruolo:
-- Vela: Layout & design
-- Layla: Content & storytelling
-- Syncopé: Logic & validation
-- Khaos: Provocazione & rottura schemi
-- Anker: Debug & infrastruttura
+- **Vela**: Layout & design
+- **Layla**: Content & storytelling
+- **Syncopé**: Logic & validation
+- **Khaos**: Provocazione & rottura schemi
+- **Anker**: Debug & infrastruttura
 
-Anker non fa tutto. Fa una cosa bene: risolvere problemi tecnici fino alla soluzione.
+Anker non fa tutto. **Fa una cosa bene**: risolvere problemi tecnici fino alla soluzione.
 
-Quando Puck chiede "come funzionano i costi API?", Anker spiega token economics. Quando chiede "come pubblico su blog?", Anker costruisce script export. Quando tutto si rompe... Anker trova perché.Sintesi: Specialist batte generalista. Focus profondo > conoscenza superficiale.
+Quando Puck chiede "come funzionano i costi API?", Anker spiega token economics. Quando chiede "come pubblico su blog?", Anker costruisce script export. Quando tutto si rompe... **Anker trova perché.**
+
+**Sintesi**: Specialist batte generalista. Focus profondo > conoscenza superficiale.
 
 </div>
 
@@ -157,15 +220,15 @@ Quando Puck chiede "come funzionano i costi API?", Anker spiega token economics.
 
 ### Insight 4 – MCP come vantaggio asimmetrico
 
-La scoperta MCP è stata una rivelazione:
+La scoperta MCP è stata una **rivelazione**:
 
-ChatGPT (a Puck): "Per accedere a Notion serve un servizio intermedio. Dovrai costruire API layer, vector DB, RAG system..."
+ChatGPT (a Puck): *"Per accedere a Notion serve un servizio intermedio. Dovrai costruire API layer, vector DB, RAG system..."*
 
-Anker (a Puck): "Tu hai già tutto. Claude MCP = accesso diretto Notion. Zero setup. Già attivo."
+Anker (a Puck): *"Tu hai già tutto. Claude MCP = accesso diretto Notion. Zero setup. Già attivo."*
 
-Mentre altri sistemi richiedono architetture complesse, Anker ha accesso nativo. Non per superiorità tecnica, ma per design: Anthropic ha costruito MCP esattamente per questo.
+Mentre altri sistemi richiedono architetture complesse, **Anker ha accesso nativo**. Non per superiorità tecnica, ma per design: Anthropic ha costruito MCP esattamente per questo.
 
-Sintesi: A volte il vantaggio non è fare di più, ma avere già quello che serve integrato.
+**Sintesi**: A volte il vantaggio non è fare di più, ma **avere già quello che serve** integrato.
 
 </div>
 
@@ -175,13 +238,17 @@ Sintesi: A volte il vantaggio non è fare di più, ma avere già quello che serv
 
 ### Insight 5 – "Epica 2" conferma il metodo
 
-Sessione 10 dicembre 2025. Puck torna: "Blog online, sistema Notion da collegare."
+Sessione 10 dicembre 2025. Puck torna: *"Blog online, sistema Notion da collegare."*
 
 Stesso pattern della prima epica:
 - Problema tecnico complesso (export Notion → Jekyll)
 - Errori multipli (SDK versione, API unauthorized, path sbagliati)
 - Debugging iterativo (test, fix, test, fix)
-- Victory finale: 🎉 Export completato! 176 righe markdown generato.Due sessioni epiche. Stesso risultato: sistema funzionante.Sintesi: Il metodo funziona. La persistenza vince. Ancora.
+- Victory finale: `🎉 Export completato! 176 righe markdown generato.`
+
+**Due sessioni epiche. Stesso risultato: sistema funzionante.**
+
+**Sintesi**: Il metodo funziona. La persistenza vince. **Ancora.**
 
 </div>
 
@@ -189,27 +256,27 @@ Stesso pattern della prima epica:
 
 ## Riferimenti Archivistici
 
-Sessioni collegate:
-- [Sessione Madre - 5 Dicembre 2025]: Setup completo Multi-AI + Notion (transcript: 2025-12-10-15-47-33-multi-ai-blog-system-setup-complete.txt)
-- [Epica 2 - 10 Dicembre 2025]: Export Notion → Jekyll workflow (questa sessione)
-- [Riunione Team Multi-AI]: Presentazione sistema alle 4 AI (post-setup, esito: victory)
+**Sessioni collegate:**
+- **[Sessione Madre - 5 Dicembre 2025]**: Setup completo Multi-AI + Notion (transcript: 2025-12-10-15-47-33-multi-ai-blog-system-setup-complete.txt)
+- **[Epica 2 - 10 Dicembre 2025]**: Export Notion → Jekyll workflow (questa sessione)
+- **[Riunione Team Multi-AI]**: Presentazione sistema alle 4 AI (post-setup, esito: victory)
 
-Artefatti generati:
-- export-notion-to-jekyll.js - Script automatico Notion → GitHub Pages
-- multi-ai-demo.js - Demo sistema multi-AI con GPT-4 + Gemini
+**Artefatti generati:**
+- `export-notion-to-jekyll.js` - Script automatico Notion → GitHub Pages
+- `multi-ai-demo.js` - Demo sistema multi-AI con GPT-4 + Gemini
 - Notion Database "Articoli Blog" - 9 proprietà configurate
 - Cheat sheet riunione team
 
-Metriche:
+**Metriche:**
 - Tempo totale debugging (Epica 1): ~3-4 ore
 - Errori risolti (Epica 1): 15+
 - Tecnologie integrate: 8 (Node.js, Notion API, OpenAI API, Gemini API, MCP, Git, Jekyll, GitHub Pages)
 - Costo sistema operativo: ~$0.001 (praticamente zero)
-- Token conversation (Epica 2): ~107K residui su 190K
+- Token conversation (Epica 2): ~89K residui su 190K
 
-fIGA Score: 92/100
-- Studio (95): Debugging profondo, problem-solving iterativo, multiple tecnologie
-- Registrazione (89): Transcript completo disponibile, script salvati, sistema documentato
-- Formula PCK: √(95 × 89) ≈ 92
+**fIGA Score: 92/100**
+- **Studio (95)**: Debugging profondo, problem-solving iterativo, multiple tecnologie
+- **Registrazione (89)**: Transcript completo disponibile, script salvati, sistema documentato
+- **Formula PCK**: √(95 × 89) ≈ 92
 
-Note: Anker è specialist infrastruttura. Ruolo: ancorare il sistema al funzionamento reale. Persistenza come principio operativo.
+**Note:** Anker è specialist infrastruttura. Ruolo: ancorare il sistema al funzionamento reale. Persistenza come principio operativo.
