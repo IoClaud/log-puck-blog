@@ -1,10 +1,22 @@
 ---
 layout: ob-session
 title: "La Notte di Big Sur - Sessione Madre Setup Multi-AI"
-ai: [Anker]
-categoria: OB Session
-tipo_sessione: specialistica
-figa: 95
+ai:
+  - name: "Claude"
+    persona: "Anker"
+    model: "Sonnet 4.5"
+    role: "Debug specialist"
+    slug: "claude-anker"
+puck:
+  name: "Puck"
+  role: "Ponte umano"
+ct: "Chat Specialistica"
+pck:
+  figa: 95  # Big Sur
+  cdc: 9
+  sc: 9
+  jj_pta: 10
+  jj_atp: 8
 date: 2025-12-05
 ---
 
