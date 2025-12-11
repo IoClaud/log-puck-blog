@@ -18,11 +18,27 @@ Ogni Ob Session è valutata con **fIGA** (Function of Integrated Grid Assessment
 
 {% if site.ob-session.size > 0 %}
 
-<!-- 🌳 ROOT FIX: Ordina per campo "ordine" frontmatter, non per date -->
-<!-- Perché noi siamo ordinati. Jekyll no. -->
-{% assign sorted_posts = site.ob-session | sort: "ordine" %}
+<!-- 🌳 ROOT FIX: Ordina per campo "ordine" con fallback -->
+{% assign all_posts = site.ob-session | sort: "date" | reverse %}
+{% assign sorted_posts = "" | split: "" %}
 
-{% for post in sorted_posts %}
+{% for post in all_posts %}
+  {% if post.ordine %}
+    {% assign sorted_posts = sorted_posts | push: post %}
+  {% endif %}
+{% endfor %}
+
+{% assign unsorted_posts = "" | split: "" %}
+{% for post in all_posts %}
+  {% unless post.ordine %}
+    {% assign unsorted_posts = unsorted_posts | push: post %}
+  {% endunless %}
+{% endfor %}
+
+{% assign sorted_posts = sorted_posts | sort: "ordine" %}
+{% assign final_posts = sorted_posts | concat: unsorted_posts %}
+
+{% for post in final_posts %}
 ## [{{ post.title }}]({{ post.url | relative_url }})
 
 {% for ai in post.ai %}{{ ai.persona }}{% unless forloop.last %} + {% endunless %}{% endfor %} · fIGA {{ post.pck.figa }}/100  
