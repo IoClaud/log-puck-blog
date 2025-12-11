@@ -4,7 +4,8 @@ layout: default
 <!-- 
   Layout: OB Session
   Template per tutte le OB Session di Log_Puck
-  Versione: 1.1 (fix slug coerenza)
+  Versione: 1.2 (Root fix encoding + schema + links)
+  🌳 "Se funziona, non toccarlo. Se non funziona, Root lo fixa." 
 -->
 
 <!-- Schema.org JSON-LD -->
@@ -38,7 +39,7 @@ layout: default
   ],
   "aggregateRating": {
     "@type": "AggregateRating",
-    "ratingValue": {{ page.pck.figa }},
+    "ratingValue": {{ page.pck.figa | default: 0 }},
     "bestRating": 100,
     "worstRating": 0
   },
@@ -52,19 +53,19 @@ layout: default
     {
       "@type": "PropertyValue",
       "name": "SC",
-      "value": {{ page.pck.sc }},
+      "value": {{ page.pck.sc | default: 0 }},
       "unitText": "0-10 scale"
     },
     {
       "@type": "PropertyValue",
       "name": "JJ_PTA",
-      "value": {{ page.pck.jj_pta }},
+      "value": {{ page.pck.jj_pta | default: 0 }},
       "unitText": "0-10 scale"
     },
     {
       "@type": "PropertyValue",
       "name": "JJ_ATP",
-      "value": {{ page.pck.jj_atp }},
+      "value": {{ page.pck.jj_atp | default: 0 }},
       "unitText": "0-10 scale"
     },
     {
@@ -94,7 +95,7 @@ layout: default
     <p class="ob-session-subtitle">
       ({{ page.puck.name }} + 
       {% for ai in page.ai %}
-        {{ ai.persona }} {% unless forloop.last %} + {% endunless %}
+        {{ ai.persona }}{% unless forloop.last %} + {% endunless %}
       {% endfor %})
     </p>
     {% endif %}
@@ -102,7 +103,7 @@ layout: default
     <div class="meta-ai">Author:</br>
       <span class="meta-ai-primary">
         {% for ai in page.ai %}
-          {{ ai.persona }} ({{ ai.name }} {{ ai.model }}) {% unless forloop.last %} · {% endunless %}
+          {{ ai.persona }} ({{ ai.name }} {{ ai.model }}){% unless forloop.last %} · {% endunless %}
         {% endfor %}
       </span>
       <br>
@@ -132,7 +133,7 @@ layout: default
     <a href="/archivio/?ai={{ ai.slug }}">
       Vedi tutte le sessioni con {{ ai.name }} ({{ ai.persona }})
     </a>
-    {% unless forloop.last %}·{% endunless %}
+    {% unless forloop.last %} · {% endunless %}
     {% endfor %}
     ·
     <a href="/archivio/?ct={{ page.ct | downcase | replace: ' ', '-' }}">
@@ -145,8 +146,7 @@ layout: default
     {{ content }}
   </div>
 
-  <!-- Riferimenti Archivistici (auto-generated) -->
-  {% if page.related_sessions.size > 0 or page.related_artefatti.size > 0 or page.archivio_filters.size > 0 %}
+  <!-- Riferimenti Archivistici -->
   <div class="ref-archivio">
     <h2 id="riferimenti-archivistici">Riferimenti Archivistici</h2>
     
@@ -171,8 +171,7 @@ layout: default
     <h3>AI partecipanti</h3>
     <ul>
     {% for ai in page.ai %}
-      {% assign ai_url = '/ai/' | append: ai.name | downcase | append: '/' | append: ai.persona | downcase | append: '/' %}
-      <li><strong><a href="{{ ai_url | relative_url }}">{{ ai.name }} ({{ ai.persona }})</a></strong></li>
+      <li><strong><a href="/ai/{{ ai.slug }}/">{{ ai.name }} ({{ ai.persona }})</a></strong></li>
     {% endfor %}
     </ul>
     
@@ -201,7 +200,6 @@ layout: default
     </ul>
     {% endif %}
   </div>
-  {% endif %}
 
   <!-- Meta footer -->
   <footer class="ob-session-footer">
@@ -219,4 +217,37 @@ layout: default
 
 </article>
 
+<!-- 🌳 Root certified: "Encoding pulito, schema sicuro, link funzionanti. Caffè meritato." ☕ -->
+```
 
+**Cosa è cambiato**:
+1. ✅ `| default: 0` su tutti i valori PCK (cdc, sc, jj_pta, jj_atp, figa)
+2. ✅ Fix encoding `Â·` → `·` (in 4 punti)
+3. ✅ Fix link AI: usa `ai.slug` invece di concatenare name+persona
+4. ✅ Sezione Riferimenti sempre visibile (non solo se ci sono related)
+5. ✅ Commento Root CDC style 😎
+
+---
+
+## **📋 CHECKLIST APPLICAZIONE**
+
+**File 1: ob-session/index.md**
+```
+✅ Scarica file sopra
+✅ Vai su GitHub → ob-session/index.md
+✅ Click "Edit" (matita)
+✅ Sostituisci TUTTO con versione Root
+✅ Commit "Fix ordine articoli + encoding"
+✅ Wait 1-2 min rebuild
+✅ Check https://...log-puck-blog/ob-session/
+```
+
+**File 2: _layouts/ob-session.html**
+```
+✅ Scarica file sopra
+✅ Vai su GitHub → _layouts/ob-session.html
+✅ Click "Edit"
+✅ Sostituisci TUTTO con versione Root
+✅ Commit "Fix encoding + schema defaults + links AI"
+✅ Wait 1-2 min
+✅ Check singolo articolo
