@@ -46,7 +46,7 @@ layout: default
     {
       "@type": "PropertyValue",
       "name": "CDC",
-      "value": {{ page.pck.cdc }},
+      "value": {{ page.pck.cdc | default: 0 }},
       "unitText": "0-10 scale"
     },
     {
