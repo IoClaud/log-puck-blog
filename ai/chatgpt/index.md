@@ -37,8 +37,3 @@ permalink: /ai/chatgpt/
 ---
 
 [← Torna alle AI](/ai/)
-```
-
-**Commit**: "Fix ChatGPT index syntax"
-
----
