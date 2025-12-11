@@ -56,12 +56,17 @@
   <div class="pck-primitives">
     
     <!-- CDC -->
-    <div class="pck-bar">
-      <span class="pck-bar-label" data-tooltip="CDC – Coerenza Dati di Contesto (stabilità del frame e dei vincoli)">CDC</span>
-      <div class="pck-bar-track">
-        <div class="pck-bar-fill" style="width: {{ include.cdc | times: 10 }}%; background-color: var(--pck-cdc);"></div>
+    <!-- In _includes/pck-widget.html -->
+    <div class="pck-scores">
+      <div class="pck-bar">
+        <span>CDC</span>
+        <div style="width: {{ page.pck.cdc | times: 10 }}%"></div>
       </div>
-      <span class="pck-bar-value">{{ include.cdc }}/10</span>
+      <div class="pck-bar">
+        <span>SC</span>
+        <div style="width: {{ page.pck.sc | times: 10 }}%"></div>
+      </div>
+      <!-- ... JJ_PTA, JJ_ATP -->
     </div>
     
     <!-- SC -->
