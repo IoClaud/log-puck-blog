@@ -1,117 +1,112 @@
 <!-- _includes/pck-widget.html -->
 <!-- PCK Widget - Benchmark visuale Ob Session -->
 <!-- Parametri: figa, cdc, sc, jj_pta, jj_atp, ct, ai -->
+<!-- 🏆 PCK WIDGET v2.0 - Root + Anker Production -->
+<!-- "Widget che non si rompe mai" - cit. Puck mentre debugga alle 3 di notte -->
 
 <div class="pck-widget">
   
-  <!-- Gauge fIGA principale -->
-  <div class="pck-gauge-container">
-    <svg class="pck-gauge" viewBox="0 0 140 80" width="140" height="80">
-      <!-- Traccia di sfondo -->
-      <path 
-        d="M 10 70 A 60 60 0 0 1 130 70" 
-        fill="none" 
-        stroke="var(--gray-border)" 
-        stroke-width="8" 
-        stroke-linecap="round"
-      />
+  <!-- Gauge semicerchio fIGA -->
+  <div class="pck-gauge">
+    <!-- SVG gauge qui (se già ce l'hai lascia così) -->
+    <svg viewBox="0 0 200 120" class="gauge-svg">
+      <path class="gauge-bg" d="M 20 100 A 80 80 0 0 1 180 100" 
+            fill="none" stroke="#D4D0C8" stroke-width="8"/>
       
-      <!-- Traccia progressiva colorata -->
-      {% comment %}
-      188.4 ≈ lunghezza arco semicerchio (π * 60).
-      figa_length = 188.4 * (figa/100)
-      dashoffset = 188.4 - figa_length
-      {% endcomment %}
-      {% assign figa_length = include.figa | times: 1.884 %}
-      
-      {% if include.figa >= 71 %}
-        {% assign gauge_color = "var(--accent-blue)" %}
-      {% elsif include.figa >= 41 %}
-        {% assign gauge_color = "var(--accent-oro)" %}
+      <!-- 🎨 Fill colorato basato su valore fIGA -->
+      {% if page.figa >= 71 %}
+        {% assign gauge_color = "#0057A3" %}
+      {% elsif page.figa >= 41 %}
+        {% assign gauge_color = "#C89F65" %}
       {% else %}
-        {% assign gauge_color = "var(--accent-red)" %}
+        {% assign gauge_color = "#B54A2F" %}
       {% endif %}
       
-      <path 
-        d="M 10 70 A 60 60 0 0 1 130 70" 
-        fill="none" 
-        stroke="{{ gauge_color }}" 
-        stroke-width="8" 
-        stroke-linecap="round"
-        stroke-dasharray="188.4"
-        stroke-dashoffset="{{ 188.4 | minus: figa_length }}"
-        class="gauge-fill"
-      />
+      <!-- Calcola angolo: 0-100 → 0-180 gradi -->
+      {% assign angle = page.figa | times: 1.8 %}
+      {% assign rad = angle | times: 0.0174533 %}
+      {% assign x = 100 | plus: rad | cos | times: 80 %}
+      {% assign y = 100 | minus: rad | sin | times: 80 %}
+      
+      <path class="gauge-fill" 
+            d="M 20 100 A 80 80 0 {% if page.figa > 50 %}1{% else %}0{% endif %} 1 {{ x }} {{ y }}" 
+            fill="none" 
+            stroke="{{ gauge_color }}" 
+            stroke-width="8"/>
     </svg>
     
-    <!-- Valore fIGA -->
-    <div class="pck-gauge-value">
-      <span class="figa-number" data-tooltip="Qualità archivistica complessiva della sessione (0–100)">{{ include.figa }}</span>
-      <span class="figa-label">/100</span>
-    </div>
-    <div class="pck-gauge-label">fIGA</div>
+    <div class="gauge-value">{{ page.figa }}</div>
+    <div class="gauge-label">fIGA</div>
   </div>
 
-  <!-- Indici primitivi -->
-  <div class="pck-primitives">
+  <!-- 📊 Barre primitive PCK -->
+  <div class="pck-scores">
     
-    <!-- CDC -->
-    <!-- In _includes/pck-widget.html -->
-    <div class="pck-scores">
-      <div class="pck-bar">
-        <span>CDC</span>
-        <div style="width: {{ page.pck.cdc | times: 10 }}%"></div>
-      </div>
-      <div class="pck-bar">
-        <span>SC</span>
-        <div style="width: {{ page.pck.sc | times: 10 }}%"></div>
-      </div>
-      <!-- ... JJ_PTA, JJ_ATP -->
-    </div>
-    
-    <!-- SC -->
+    <!-- CDC - Caos Di Cane -->
+    {% if page.pck.cdc %}
     <div class="pck-bar">
-      <span class="pck-bar-label" data-tooltip="SC – Solidità Concettuale (robustezza delle strutture e delle scelte)">SC</span>
+      <span class="pck-bar-label">CDC</span>
       <div class="pck-bar-track">
-        <div class="pck-bar-fill" style="width: {{ include.sc | times: 10 }}%; background-color: var(--pck-sc);"></div>
+        <div class="pck-bar-fill pck-cdc" 
+             style="width: {{ page.pck.cdc | times: 10 }}%"></div>
       </div>
-      <span class="pck-bar-value">{{ include.sc }}/10</span>
+      <span class="pck-bar-value">{{ page.pck.cdc }}</span>
     </div>
+    {% endif %}
     
-    <!-- JJ_PTA -->
+    <!-- SC - Studio Cognitivo -->
+    {% if page.pck.sc %}
     <div class="pck-bar">
-      <span class="pck-bar-label" data-tooltip="JJ_PTA – Grado di libertà AI (Puck → AI): spazio di manovra concesso alla macchina">JJ_PTA</span>
+      <span class="pck-bar-label">SC</span>
       <div class="pck-bar-track">
-        <div class="pck-bar-fill" style="width: {{ include.jj_pta | times: 10 }}%; background-color: var(--pck-jj-pta);"></div>
+        <div class="pck-bar-fill pck-sc" 
+             style="width: {{ page.pck.sc | times: 10 }}%"></div>
       </div>
-      <span class="pck-bar-value">{{ include.jj_pta }}/10</span>
+      <span class="pck-bar-value">{{ page.pck.sc }}</span>
     </div>
+    {% endif %}
     
-    <!-- JJ_ATP -->
+    <!-- JJ_PTA - Joke Jazz Pattern to Art -->
+    {% if page.pck.jj_pta %}
     <div class="pck-bar">
-      <span class="pck-bar-label" data-tooltip="JJ_ATP – Grado di controllo archivistico (AI → Puck): quanto il sistema contiene o rovescia il flusso">JJ_ATP</span>
+      <span class="pck-bar-label">JJ_PTA</span>
       <div class="pck-bar-track">
-        <div class="pck-bar-fill" style="width: {{ include.jj_atp | times: 10 }}%; background-color: var(--pck-jj-atp);"></div>
+        <div class="pck-bar-fill pck-jj-pta" 
+             style="width: {{ page.pck.jj_pta | times: 10 }}%"></div>
       </div>
-      <span class="pck-bar-value">{{ include.jj_atp }}/10</span>
+      <span class="pck-bar-value">{{ page.pck.jj_pta }}</span>
     </div>
+    {% endif %}
+    
+    <!-- JJ_ATP - Art to Pattern -->
+    {% if page.pck.jj_atp %}
+    <div class="pck-bar">
+      <span class="pck-bar-label">JJ_ATP</span>
+      <div class="pck-bar-track">
+        <div class="pck-bar-fill pck-jj-atp" 
+             style="width: {{ page.pck.jj_atp | times: 10 }}%"></div>
+      </div>
+      <span class="pck-bar-value">{{ page.pck.jj_atp }}</span>
+    </div>
+    {% endif %}
     
   </div>
-
-  <!-- CT e Link -->
-  <div class="pck-footer">
-    <span class="pck-ct" data-tooltip="Tipologia di interazione in questa Ob Session">CT: {{ include.ct }}</span>
-    <div class="pck-links">
-      <a href="/archivio/?ai={{ include.ai | downcase | replace: ' ', '-' }}" class="pck-link">
-        Filtra per {{ include.ai }}
-      </a>
-      <a href="/archivio/?ct={{ include.ct | downcase | replace: ' ', '-' }}" class="pck-link">
-        Filtra per CT: {{ include.ct }}
-      </a>
-    </div>
+  
+  <!-- CT - Context Type -->
+  {% if page.ct %}
+  <div class="pck-ct">
+    <strong>CT:</strong> {{ page.ct }}
+  </div>
+  {% endif %}
+  
+  <!-- 🔗 Link filtri -->
+  <div class="pck-filters">
+    <a href="/ai/{{ page.ai_slug }}/">Filtra per AI</a>
+    {% if page.ct %}
+    <a href="/ct/{{ page.ct | slugify }}/">Filtra per CT</a>
+    {% endif %}
   </div>
   
 </div>
 
-
-
+<!-- 🌳 Root says: "Se questo widget si rompe, è colpa del futuro Puck che ha cambiato tutto alle 2 di notte" -->
