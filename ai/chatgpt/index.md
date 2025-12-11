@@ -22,17 +22,19 @@ permalink: /ai/chatgpt/
 
 ## Sessioni con ChatGPT
 
-{% assign chatgpt_sessions = site.ob-session | where_exp: "post", "post.ai contains 'chatgpt'" %}
-
-{% if chatgpt_sessions.size > 0 %}
-<ul>
-{% for post in chatgpt_sessions %}
-  <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> ({{ post.date | date: "%d %B %Y" }})</li>
+{% for post in site.ob-session %}
+  {% assign has_chatgpt = false %}
+  {% for ai in post.ai %}
+    {% if ai.name == "ChatGPT" %}
+      {% assign has_chatgpt = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  
+  {% if has_chatgpt %}
+  - [{{ post.title }}]({{ post.url | relative_url }}) ({{ post.date | date: "%d %B %Y" }})
+  {% endif %}
 {% endfor %}
-</ul>
-{% else %}
-<p>Nessuna sessione ancora.</p>
-{% endif %}
 
 ---
 
