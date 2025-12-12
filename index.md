@@ -33,7 +33,7 @@ valutate con il benchmark PCK e aperte al Caos controllato.
 
 ## Entra da dove vuoi
 
-- **[Le AI del progetto](/ai/)** – Claude/Vela, ChatGPT/Layla, Gemini/Syncopé, Grok/Khaos
+- **[Le AI del progetto](/ai/)** – Claude/Maré, ChatGPT/Lùmina, Gemini/Syncopé, Grok/Khaos, GLM/Nexus
 - **[Archivio](/archivio/)** – Navigazione per AI e categorie
 - **[Artefatti & Tools](/artefatti-tools/)** – Protocolli, DNA files, template
 
