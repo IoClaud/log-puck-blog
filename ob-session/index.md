@@ -4,9 +4,8 @@ title: "Ob Session"
 permalink: /ob-session/
 ---
 
-<!-- 🌊 FlowSense: Landing Ob Session - 09/12/2025 -->
-<!-- 🌳 Root: Fix ordine + encoding - 11/12/2025 -->
-<!-- Tutte le sessioni operative documentate cross-section -->
+<!-- 🌊 FlowSense: Landing Ob Session -->
+<!-- 🌳 Root: Simplified - no complex sorting -->
 
 # Ob Session
 
@@ -18,27 +17,7 @@ Ogni Ob Session è valutata con **fIGA** (Function of Integrated Grid Assessment
 
 {% if site.ob-session.size > 0 %}
 
-<!-- 🌳 ROOT FIX: Ordina per campo "ordine" con fallback -->
-{% assign all_posts = site.ob-session | sort: "date" | reverse %}
-{% assign sorted_posts = "" | split: "" %}
-
-{% for post in all_posts %}
-  {% if post.ordine %}
-    {% assign sorted_posts = sorted_posts | push: post %}
-  {% endif %}
-{% endfor %}
-
-{% assign unsorted_posts = "" | split: "" %}
-{% for post in all_posts %}
-  {% unless post.ordine %}
-    {% assign unsorted_posts = unsorted_posts | push: post %}
-  {% endunless %}
-{% endfor %}
-
-{% assign sorted_posts = sorted_posts | sort: "ordine" %}
-{% assign final_posts = sorted_posts | concat: unsorted_posts %}
-
-{% for post in final_posts %}
+{% for post in site.ob-session %}
 ## [{{ post.title }}]({{ post.url | relative_url }})
 
 {% for ai in post.ai %}{{ ai.persona }}{% unless forloop.last %} + {% endunless %}{% endfor %} · fIGA {{ post.pck.figa }}/100  
@@ -64,27 +43,43 @@ Nessuna Ob Session pubblicata ancora.
   <a href="{{ '/' | relative_url }}">Home</a>
 </p>
 
-<!-- 🌳 Root says: "Ordine is the new reversed. Caffè is the new water." ☕ -->
+<!-- 🌳 Root: Ordinamento manuale via campo ordine in frontmatter. Jekyll sort troppo complesso. -->
 ```
 
-**Cosa è cambiato**:
-1. ✅ `{% assign sorted_posts = site.ob-session | sort: "ordine" %}` → Ordina per numero
-2. ✅ `{% for post in sorted_posts %}` → Usa lista ordinata
-3. ✅ Rimosso `reversed` (ora ordina come vogliamo noi)
-4. ✅ Fixato encoding `Â·` → `·`
-5. ✅ Fixato encoding `Ã¨` → `è`
+**NOTA**: Questo NON ordina per `ordine`, ma almeno **FUNZIONA**!
+
+Per ordinare correttamente dobbiamo:
+1. Prima fare funzionare tutto ✅
+2. Poi aggiungere ordinamento con approccio diverso
 
 ---
 
-## **📁 RINOMINARE FILE SU GITHUB**
+## **💡 ALTERNATIVA: ORDINA MANUALMENTE I FILE**
 
-> "mi hanno detto che non si possono rinominare i file su GH, bisogna deletarli e rifarli. confermi?"
-
-**Confermo per GitHub Web UI** 😢
-
-**MA!** Ci sono 2 workaround:
-
-### **Workaround 1: Delete + Upload (Web UI)**
+Invece di ordinamento Liquid, usa **nomi file**:
 ```
-1. Delete file vecchio
-2. Upload file nuovo con nome corretto
+001-epica-big-sur.md
+002-allineare.md  
+003-primo-check.md
+004-anker.md
+005-notion-workflow.md
+```
+
+Jekyll li ordina **alfabeticamente** automaticamente! ✅
+
+---
+
+## **📋 AZIONE IMMEDIATA**
+
+**Opzione A - Versione semplice (1 min)**:
+```
+1. Copia codice sopra in ob-session/index.md
+2. Commit "Simplify ob-session index - remove complex sorting"
+3. Build dovrebbe essere VERDE ✅
+```
+
+**Opzione B - Ordinamento via filename**:
+```
+File già hanno numeri (001-, 002-, etc)
+Jekyll ordina automaticamente per nome file
+Aggiungi solo "sort" nel _config.yml se necessario
