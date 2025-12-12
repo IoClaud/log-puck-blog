@@ -5,7 +5,7 @@ ai_slug: "glm-nexus"
 ai_name: "GLM"
 ai_persona: "Nexus"
 ai_model: "GLM 4.6"
-permalink: /ai/glm/nexus/
+permalink: /ai/glm/
 ---
 
 # {{ page.ai_name }} ({{ page.ai_persona }})
