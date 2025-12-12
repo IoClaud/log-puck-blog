@@ -11,7 +11,7 @@ una Ob Session alla volta.
 <div class="callout" markdown="1">
 **Benvenuto nel laboratorio vivo.**  
 Qui non trovi contenuti finiti, ma tracce di un processo:  
-sessioni con Claude, ChatGPT, Gemini, Grok,  
+sessioni con Claude, ChatGPT, Gemini, Grok, GLM,  
 valutate con il benchmark PCK e aperte al Caos controllato.
 </div>
 
