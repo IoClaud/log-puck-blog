@@ -26,7 +26,7 @@ valutate con il benchmark PCK e aperte al Caos controllato.
 {% endfor %}
 
 <p style="text-align: center; margin-top: 40px;">
-  <a href="/ob-session/">Esplora tutte le Ob Session →</a>
+  <a href="{{ site.baseurl }}/ob-session/">Esplora tutte le Ob Session →</a> <!-- yeeaaaa Jonny!! -->
 </p>
 
 ---
