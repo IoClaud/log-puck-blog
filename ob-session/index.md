@@ -4,8 +4,9 @@ title: "Ob Session"
 permalink: /ob-session/
 ---
 
-<!-- 🌊 FlowSense: Landing Ob Session -->
-<!-- 🌳 Root: Simplified - no complex sorting -->
+<!-- 🌊 FlowSense: Landing Ob Session - 09/12/2025 -->
+<!-- 🌳 Root: Simplified - no complex sorting - 12/12/2025 -->
+<!-- Tutte le sessioni operative documentate cross-section -->
 
 # Ob Session
 
@@ -43,43 +44,5 @@ Nessuna Ob Session pubblicata ancora.
   <a href="{{ '/' | relative_url }}">Home</a>
 </p>
 
-<!-- 🌳 Root: Ordinamento manuale via campo ordine in frontmatter. Jekyll sort troppo complesso. -->
-```
-
-**NOTA**: Questo NON ordina per `ordine`, ma almeno **FUNZIONA**!
-
-Per ordinare correttamente dobbiamo:
-1. Prima fare funzionare tutto ✅
-2. Poi aggiungere ordinamento con approccio diverso
-
----
-
-## **💡 ALTERNATIVA: ORDINA MANUALMENTE I FILE**
-
-Invece di ordinamento Liquid, usa **nomi file**:
-```
-001-epica-big-sur.md
-002-allineare.md  
-003-primo-check.md
-004-anker.md
-005-notion-workflow.md
-```
-
-Jekyll li ordina **alfabeticamente** automaticamente! ✅
-
----
-
-## **📋 AZIONE IMMEDIATA**
-
-**Opzione A - Versione semplice (1 min)**:
-```
-1. Copia codice sopra in ob-session/index.md
-2. Commit "Simplify ob-session index - remove complex sorting"
-3. Build dovrebbe essere VERDE ✅
-```
-
-**Opzione B - Ordinamento via filename**:
-```
-File già hanno numeri (001-, 002-, etc)
-Jekyll ordina automaticamente per nome file
-Aggiungi solo "sort" nel _config.yml se necessario
+<!-- 🌳 Root: Ordinamento alfabetico file (001-, 002-, etc) funziona meglio di Liquid sort complesso -->
+<!-- 💡 Per ordinamento custom: popolare campo "ordine" su Notion + logic diversa (futuro) -->
