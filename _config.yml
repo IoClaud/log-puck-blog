@@ -10,9 +10,9 @@ timezone: "Europe/Rome"
 # Markdown
 markdown: kramdown
 kramdown:
-  input: GFM
-  hard_wrap: false
-  parse_block_html: true  # ← QUESTA RIGA MANCA!
+  input: kramdown  # ← Kramdown standard supporta parse_block_html
+  auto_ids: true
+  syntax_highlighter: rouge
 
 # Collections
 collections:
