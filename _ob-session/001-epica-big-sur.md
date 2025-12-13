@@ -142,121 +142,132 @@ Non per fortuna. Per persistenza.
 ---
 
 ## Insights & Lezioni
-
-### Lezione 1 — Big Sur È Vecchio Ma Con Codice Custom Funziona Tutto
-
-Hardware legacy non significa impossibilità.
-
-Con Node.js e un'architettura semplice (server HTTP proxy), abbiamo costruito funzionalità moderne su un sistema operativo vecchio di 4 anni.
-
-**In pratica:** Non serve sempre l'ultimo hardware. Serve codice smart e architettura pulita.
-
----
-
-### Lezione 2 — MCP È Semplice Ma Richiede Precisione Assoluta
-
-Il Model Context Protocol di Anthropic è potente ma richiede configurazione perfetta.
-
-Un errore di path, un formato sbagliato, un timeout troppo corto = fallimento totale.
-
-**In pratica:** La semplicità architetturale non significa facilità operativa. Precisione beats complessità.
+<div class="callout">
+  ### Lezione 1 — Big Sur È Vecchio Ma Con Codice Custom Funziona Tutto
+  
+  Hardware legacy non significa impossibilità.
+  
+  Con Node.js e un'architettura semplice (server HTTP proxy), abbiamo costruito funzionalità moderne su un sistema operativo vecchio di 4 anni.
+  
+  **In pratica:** Non serve sempre l'ultimo hardware. Serve codice smart e architettura pulita.
+</div>
 
 ---
 
-### Lezione 3 — Debugging A Strati Richiede Persistenza, Non Genio
-
-Problema tipico: Fix un errore, ne appare un altro diverso.
-
-**Esempio reale dalla sessione:**
-
-1. Node.js non installa → dyld: Symbol not found
-2. Fix: Installa Node 18 → Nuovo errore: notion.databases.query is not a function
-3. Fix: Downgrade SDK → Nuovo errore: API token is invalid
-4. Fix: Aggiorna formato key → Nuovo errore: Database not found
-5. Fix: Usa database parent ID → Funziona
-
-Cinque errori sovrapposti. Ognuno nascosto dal precedente.
-
-**Metodo Anker:**
-
-- Isola un errore alla volta
-- Non assume che fixandone uno siano risolti tutti
-- Documenta ogni fix (per evitare regressioni)
-- Non molla finché l'intera catena non funziona
-
-**Sintesi:** Debugging reale è debugging a strati. Ogni fix rivela il problema successivo. Persistenza batte intuito.
+<div class="callout">
+  ### Lezione 2 — MCP È Semplice Ma Richiede Precisione Assoluta
+  
+  Il Model Context Protocol di Anthropic è potente ma richiede configurazione perfetta.
+  
+  Un errore di path, un formato sbagliato, un timeout troppo corto = fallimento totale.
+  
+  **In pratica:** La semplicità architetturale non significa facilità operativa. Precisione beats complessità.
+</div>
 
 ---
 
-### Lezione 4 — Separazione Abbonamenti vs API È Cruciale
-
-Confusione comune: "Ho ChatGPT Plus, quindi ho API illimitata?"
-
-NO. Totalmente separati:
-
-- **Abbonamenti chat** (Plus, Pro, Advanced): Accesso interfacce web/mobile
-- **API access:** Crediti separati, costi per token
-
-**Caso Puck:**
-
-- ChatGPT Plus: 30€/mese (chat illimitata web)
-- ChatGPT API: $5 credito iniziale + pay-per-use
-- Claude Pro: 97€/mese (chat + MCP incluso)
-- Claude API: NON usata (MCP gratis nella chat)
-- Gemini Advanced: 30€/mese (chat)
-- Gemini API: GRATIS (1500 req/giorno)
-
-**Budget reale API:** ~5-10€/mese per 250-600 articoli.
-
-**Sintesi:** Abbonamenti ≠ API. MCP (Claude) + Gemini free tier = sistema quasi-zero-cost per blog.
-
----
-
-### Lezione 5 — "Non Capisco Niente" È Punto Di Partenza, Non Di Arrivo
-
-**Puck:** "non ci ho capito niente, troppo veloce. Recupererò con il tempo?"
-
-**Anker:** "SONO 8 TECNOLOGIE DIVERSE IN 3 ORE! Nessuno capisce tutto al primo giro. Il resto lo impari facendo."
-
-**Lista tecnologie integrate in una notte:**
-
-1. Node.js + npm
-2. Notion API
-3. OpenAI API (GPT-4)
-4. Google Generative AI (Gemini)
-5. MCP Protocol
-6. Git versioning
-7. JavaScript async/await
-8. Environment variables (.env)
-
-**Aspettativa irrealistica:** Capire tutto subito.
-
-**Realtà sana:** Capire abbastanza per proseguire. Il resto si impara iterando.
-
-**Sintesi:** "Non capisco niente" non è un problema. È onestà. Il problema è mollare perché non si capisce tutto subito. La comprensione viene facendo, non studiando prima di fare.
+<div class="callout">
+  ### Lezione 3 — Debugging A Strati Richiede Persistenza, Non Genio
+  
+  Problema tipico: Fix un errore, ne appare un altro diverso.
+  
+  **Esempio reale dalla sessione:**
+  
+  1. Node.js non installa → dyld: Symbol not found
+  2. Fix: Installa Node 18 → Nuovo errore: notion.databases.query is not a function
+  3. Fix: Downgrade SDK → Nuovo errore: API token is invalid
+  4. Fix: Aggiorna formato key → Nuovo errore: Database not found
+  5. Fix: Usa database parent ID → Funziona
+  
+  Cinque errori sovrapposti. Ognuno nascosto dal precedente.
+  
+  **Metodo Anker:**
+  
+  - Isola un errore alla volta
+  - Non assume che fixandone uno siano risolti tutti
+  - Documenta ogni fix (per evitare regressioni)
+  - Non molla finché l'intera catena non funziona
+  
+  **Sintesi:** Debugging reale è debugging a strati. Ogni fix rivela il problema successivo. Persistenza batte intuito.
+</div>
 
 ---
 
-### Lezione 6 — La Riunione Con Le "AI Di Giove"
+<div class="callout">
+  ### Lezione 4 — Separazione Abbonamenti vs API È Cruciale
+  
+  Confusione comune: "Ho ChatGPT Plus, quindi ho API illimitata?"
+  
+  NO. Totalmente separati:
+  
+  - **Abbonamenti chat** (Plus, Pro, Advanced): Accesso interfacce web/mobile
+  - **API access:** Crediti separati, costi per token
+  
+  **Caso Puck:**
+  
+  - ChatGPT Plus: 30€/mese (chat illimitata web)
+  - ChatGPT API: $5 credito iniziale + pay-per-use
+  - Claude Pro: 97€/mese (chat + MCP incluso)
+  - Claude API: NON usata (MCP gratis nella chat)
+  - Gemini Advanced: 30€/mese (chat)
+  - Gemini API: GRATIS (1500 req/giorno)
+  
+  **Budget reale API:** ~5-10€/mese per 250-600 articoli.
+  
+  **Sintesi:** Abbonamenti ≠ API. MCP (Claude) + Gemini free tier = sistema quasi-zero-cost per blog.
+</div>
 
-**Puck:** "Le 4 AI sono cicloni forza 1000 venuti da Giove, se non arrivo preparato mi schiacciano."
+---
 
-Giorno dopo (6 dicembre). Riunione prevista con Vela, Layla, Syncopé, Khaos. Puck ha paura.
+<div class="callout">
+  ### Lezione 5 — "Non Capisco Niente" È Punto Di Partenza, Non Di Arrivo
+  
+  **Puck:** "non ci ho capito niente, troppo veloce. Recupererò con il tempo?"
+  
+  **Anker:** "SONO 8 TECNOLOGIE DIVERSE IN 3 ORE! Nessuno capisce tutto al primo giro. Il resto lo impari facendo."
+  
+  **Lista tecnologie integrate in una notte:**
+  
+  1. Node.js + npm
+  2. Notion API
+  3. OpenAI API (GPT-4)
+  4. Google Generative AI (Gemini)
+  5. MCP Protocol
+  6. Git versioning
+  7. JavaScript async/await
+  8. Environment variables (.env)
+  
+  **Aspettativa irrealistica:** Capire tutto subito.
+  
+  **Realtà sana:** Capire abbastanza per proseguire. Il resto si impara iterando.
+  
+  **Sintesi:** "Non capisco niente" non è un problema. È onestà. Il problema è mollare perché non si capisce tutto subito. La comprensione viene facendo, non studiando prima di fare.
+</div>
 
-**Anker ribalta prospettiva:**
+---
 
-"Tu hai il sistema che funziona. Sei il project manager, non il developer. Tu coordini, loro eseguono. Facts > words. Sempre."
-
-**Risultato riunione:** Puck mostra multi-ai-demo.js funzionante. Le AI vedono sistema live. Victory.
-
-**Lezione profonda:**
-
-- Le AI possono parlare quanto vogliono
-- Ma chi ha il sistema funzionante ha autorità
-- Non serve essere esperto tecnico
-- Serve essere coordinator con sistema operativo
-
-**Sintesi:** Paura pre-riunione = normale. Ma con sistema funzionante, il potere negoziale è tuo. Code beats talk.
+<div class="callout">
+  ### Lezione 6 — La Riunione Con Le "AI Di Giove"
+  
+  **Puck:** "Le 4 AI sono cicloni forza 1000 venuti da Giove, se non arrivo preparato mi schiacciano."
+  
+  Giorno dopo (6 dicembre). Riunione prevista con Vela, Layla, Syncopé, Khaos. Puck ha paura.
+  
+  **Anker ribalta prospettiva:**
+  
+  "Tu hai il sistema che funziona. Sei il project manager, non il developer. Tu coordini, loro eseguono. Facts > words. Sempre."
+  
+  **Risultato riunione:** Puck mostra multi-ai-demo.js funzionante. Le AI vedono sistema live. Victory.
+  
+  **Lezione profonda:**
+  
+  - Le AI possono parlare quanto vogliono
+  - Ma chi ha il sistema funzionante ha autorità
+  - Non serve essere esperto tecnico
+  - Serve essere coordinator con sistema operativo
+  
+  **Sintesi:** Paura pre-riunione = normale. Ma con sistema funzionante, il potere negoziale è tuo. Code beats talk.
+</div>
 
 ---
 
