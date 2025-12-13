@@ -1,0 +1,133 @@
+---
+---
+@import "variables";
+@import "ob-session-boxes";
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-body-size);
+  line-height: var(--line-height-body);
+  color: var(--text-main);
+  background: var(--bg-main);
+  margin: 0;
+}
+
+/* In assets/css/main.css */
+footer {
+  background-color: #F3EEE6; /* --ref-bg */
+  border-top: 1px solid #D4D0C8;
+}
+/* 🎨 PCK Widget Styles - Root Edition */
+
+.pck-widget {
+  background: #F7F5EF;
+  border: 1px solid #D4D0C8;
+  border-radius: 6px;
+  padding: 24px;
+  margin: 40px 0;
+}
+
+/* Gauge */
+.pck-gauge {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.gauge-svg {
+  width: 120px;
+  height: 60px;
+}
+
+.gauge-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin-top: 8px;
+}
+
+.gauge-label {
+  font-size: 14px;
+  color: #6A6A6A;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Barre PCK */
+.pck-scores {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.pck-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pck-bar-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4A4A4A;
+  min-width: 60px;
+  text-transform: uppercase;
+}
+
+.pck-bar-track {
+  flex: 1;
+  height: 12px;
+  background: #E7E4DD;
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 180px;
+}
+
+.pck-bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.3s ease;
+}
+
+/* 🎨 Colori barre - dalla palette Vela */
+.pck-cdc { background: #0057A3; } /* blu profondo */
+.pck-sc { background: #3D7E9B; } /* azzurro medio */
+.pck-jj-pta { background: #6BA3C4; } /* azzurro chiaro */
+.pck-jj-atp { background: #A27A4F; } /* marrone */
+
+.pck-bar-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1A1A1A;
+  min-width: 24px;
+  text-align: right;
+}
+
+/* CT e filtri */
+.pck-ct {
+  font-size: 14px;
+  color: #4A4A4A;
+  margin-bottom: 16px;
+  padding: 8px 12px;
+  background: #EFECE4;
+  border-radius: 4px;
+}
+
+.pck-filters {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.pck-filters a {
+  color: #0057A3;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.pck-filters a:hover {
+  border-bottom-color: #0057A3;
+}
+
+/* 🌳 "Se questi colori non ti piacciono, prendi un caffè e ripensaci" - Root */
