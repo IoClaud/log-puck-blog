@@ -417,7 +417,7 @@ app.listen(port, () => {
 
 **Server MCP GLM:**
 ```
-/Users/ioClaud/Desktop/00_LOG_PUCK/mcp-server-glm/mcp-server-glm.js
+.../mcp-server-glm/mcp-server-glm.js
 ```
 
 ### Filtri Utili
