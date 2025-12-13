@@ -1,0 +1,444 @@
+// ============================================================================
+// OB SESSION - Box Components
+// Versione: 1.0 - Root + FlowSense Standard
+// Classi per contenitori narrativi articoli Ob Session
+// ============================================================================
+
+// ----------------------------------------------------------------------------
+// BOX CAOS - Narrativa principale
+// Usato per: Sezione "Caos / Osservazione"
+// ----------------------------------------------------------------------------
+
+.box-caos {
+  background: $color-box-caos; // #EFECE4 - warm neutral
+  border: $border-width solid $color-border;
+  border-radius: $border-radius-md;
+  padding: $spacing-2xl; // 40px
+  margin: $spacing-block 0; // 40px top/bottom
+  
+  // Headers dentro box caos
+  h3 {
+    font-family: $font-family-title;
+    font-size: $font-size-h3;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    margin-top: 0;
+    margin-bottom: $spacing-lg; // 20px
+    
+    &:not(:first-child) {
+      margin-top: $spacing-2xl; // 40px tra sezioni
+      padding-top: $spacing-2xl;
+      border-top: 1px solid $color-border;
+    }
+  }
+  
+  h4 {
+    font-family: $font-family-title;
+    font-size: $font-size-h4;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    margin-top: $spacing-xl; // 32px
+    margin-bottom: $spacing-md; // 16px
+  }
+  
+  // Paragrafi
+  p {
+    margin-bottom: $spacing-lg; // 20px
+    line-height: $line-height-relaxed;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  // Liste
+  ul, ol {
+    margin: $spacing-md 0 $spacing-lg $spacing-xl; // 16px 0 20px 32px
+    padding-left: 0;
+    
+    li {
+      margin-bottom: $spacing-sm; // 12px
+      line-height: $line-height-relaxed;
+    }
+  }
+  
+  // Code blocks dentro box-caos
+  pre {
+    background: darken($color-box-caos, 3%);
+    border: 1px solid $color-border;
+    border-radius: $border-radius-sm;
+    padding: $spacing-md;
+    margin: $spacing-lg 0;
+    overflow-x: auto;
+    
+    code {
+      font-family: $font-family-mono;
+      font-size: $font-size-small;
+      line-height: $line-height-normal;
+      background: transparent;
+      padding: 0;
+      border: none;
+    }
+  }
+  
+  // Inline code
+  code {
+    font-family: $font-family-mono;
+    font-size: $font-size-small;
+    background: darken($color-box-caos, 5%);
+    padding: 2px 6px;
+    border-radius: $border-radius-sm;
+    border: 1px solid $color-border;
+  }
+  
+  // Separatori orizzontali
+  hr {
+    border: none;
+    border-top: 1px solid $color-border;
+    margin: $spacing-xl 0; // 32px
+  }
+  
+  // Firme AI (bold text pattern)
+  strong {
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+  }
+  
+  // Links dentro box
+  a {
+    color: $color-link;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color $transition-fast;
+    
+    &:hover {
+      border-bottom-color: $color-link;
+    }
+  }
+  
+  // Responsive
+  @include mobile {
+    padding: $spacing-xl; // 32px su mobile
+  }
+}
+
+// ----------------------------------------------------------------------------
+// CALLOUT - Insights e lezioni
+// Usato per: Sezione "Insights & Lezioni"
+// ----------------------------------------------------------------------------
+
+.callout {
+  background: $color-box-callout; // #E8F2F7 - azure
+  border-left: 4px solid $color-pck-sc; // #3D7E9B - blu medio
+  border-radius: $border-radius-md;
+  padding: $spacing-xl; // 32px
+  margin: $spacing-block 0; // 40px top/bottom
+  
+  // Headers in callout
+  h3 {
+    font-family: $font-family-title;
+    font-size: $font-size-h3;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    margin-top: 0;
+    margin-bottom: $spacing-md; // 16px
+  }
+  
+  h4 {
+    font-family: $font-family-title;
+    font-size: $font-size-h4;
+    font-weight: $font-weight-semibold;
+    color: $color-text-primary;
+    margin-top: $spacing-lg; // 20px
+    margin-bottom: $spacing-sm; // 12px
+  }
+  
+  // Paragrafi
+  p {
+    margin-bottom: $spacing-md; // 16px
+    line-height: $line-height-relaxed;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  // Liste in callout
+  ul, ol {
+    margin: $spacing-md 0 $spacing-md $spacing-lg; // 16px 0 16px 20px
+    
+    li {
+      margin-bottom: $spacing-sm; // 12px
+    }
+  }
+  
+  // Bold text (principi chiave)
+  strong {
+    font-weight: $font-weight-bold;
+    color: $color-accent-blue;
+  }
+  
+  // Links
+  a {
+    color: $color-link;
+    text-decoration: none;
+    border-bottom: 1px solid $color-link;
+    
+    &:hover {
+      color: $color-link-hover;
+      border-bottom-color: $color-link-hover;
+    }
+  }
+  
+  // Responsive
+  @include mobile {
+    padding: $spacing-lg; // 20px su mobile
+  }
+}
+
+// ----------------------------------------------------------------------------
+// METRICS BOX - Achievement e metriche
+// Usato per: Metriche sessione, achievement, statistiche
+// ----------------------------------------------------------------------------
+
+.metrics-box {
+  background: lighten($color-box-caos, 2%); // Leggermente più chiaro
+  border: $border-width solid $color-border;
+  border-radius: $border-radius-md;
+  padding: $spacing-xl; // 32px
+  margin: $spacing-block 0;
+  
+  h3 {
+    font-family: $font-family-title;
+    font-size: $font-size-h3;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    margin-top: 0;
+    margin-bottom: $spacing-lg;
+  }
+  
+  // Liste checkmark
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+    li {
+      margin-bottom: $spacing-sm; // 12px
+      padding-left: $spacing-lg; // 20px
+      position: relative;
+      line-height: $line-height-normal;
+      
+      &::before {
+        content: "✅";
+        position: absolute;
+        left: 0;
+      }
+      
+      // Pending items
+      &.pending::before {
+        content: "⏳";
+      }
+      
+      // Failed items
+      &.failed::before {
+        content: "❌";
+      }
+    }
+  }
+  
+  // Metriche in formato key: value
+  p {
+    margin-bottom: $spacing-sm;
+    
+    strong {
+      font-weight: $font-weight-semibold;
+      color: $color-text-primary;
+    }
+  }
+  
+  // Responsive
+  @include mobile {
+    padding: $spacing-lg;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// REF ARCHIVIO - Riferimenti archivistici
+// Usato per: Collegamenti, filtri, sessioni correlate
+// ----------------------------------------------------------------------------
+
+.ref-archivio {
+  background: $color-box-ref; // #F3EEE6 - light beige
+  border: $border-width solid $color-border;
+  border-radius: $border-radius-md;
+  padding: $spacing-xl; // 32px
+  margin: $spacing-block 0;
+  
+  h2, h3 {
+    font-family: $font-family-title;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    margin-top: 0;
+    margin-bottom: $spacing-lg;
+  }
+  
+  h2 {
+    font-size: $font-size-h2;
+  }
+  
+  h3 {
+    font-size: $font-size-h3;
+    margin-top: $spacing-xl; // 32px tra sottosezioni
+    
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+  
+  // Liste link
+  ul {
+    list-style: none;
+    margin: 0 0 $spacing-lg 0;
+    padding: 0;
+    
+    li {
+      margin-bottom: $spacing-sm; // 12px
+      
+      a {
+        color: $color-link;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        transition: border-color $transition-fast;
+        
+        &:hover {
+          border-bottom-color: $color-link;
+        }
+      }
+    }
+  }
+  
+  // Paragrafi descrittivi
+  p {
+    margin-bottom: $spacing-md;
+    line-height: $line-height-relaxed;
+  }
+  
+  // Responsive
+  @include mobile {
+    padding: $spacing-lg;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// CODE SECTION - Sezione codice (opzionale)
+// Usato per: Blocchi codice con descrizione
+// ----------------------------------------------------------------------------
+
+.code-section {
+  background: darken($color-box-caos, 2%);
+  border: $border-width solid $color-border;
+  border-radius: $border-radius-md;
+  padding: $spacing-xl;
+  margin: $spacing-block 0;
+  
+  h3 {
+    font-family: $font-family-title;
+    font-size: $font-size-h3;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    margin-top: 0;
+    margin-bottom: $spacing-lg;
+  }
+  
+  // Code block
+  pre {
+    background: $color-bg-base;
+    border: 1px solid $color-border;
+    border-radius: $border-radius-sm;
+    padding: $spacing-lg;
+    margin: $spacing-lg 0;
+    overflow-x: auto;
+    
+    code {
+      font-family: $font-family-mono;
+      font-size: $font-size-small;
+      line-height: $line-height-normal;
+      background: transparent;
+      padding: 0;
+      border: none;
+    }
+  }
+  
+  // Features list
+  ul {
+    margin: $spacing-md 0 $spacing-lg $spacing-xl;
+    
+    li {
+      margin-bottom: $spacing-sm;
+      line-height: $line-height-normal;
+    }
+  }
+  
+  // Responsive
+  @include mobile {
+    padding: $spacing-lg;
+    
+    pre {
+      padding: $spacing-md;
+      font-size: $font-size-tiny;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// GENERAL OVERRIDES - Markdown dentro box
+// ----------------------------------------------------------------------------
+
+// Assicura che markdown="1" funzioni correttamente
+.box-caos,
+.callout,
+.metrics-box,
+.ref-archivio,
+.code-section {
+  
+  // Blockquotes (se usati)
+  blockquote {
+    border-left: 3px solid $color-border;
+    padding-left: $spacing-lg;
+    margin: $spacing-lg 0;
+    color: $color-text-secondary;
+    font-style: italic;
+  }
+  
+  // Immagini (se inserite)
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: $border-radius-sm;
+    margin: $spacing-lg 0;
+  }
+  
+  // Tabelle (rare ma possibili)
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: $spacing-lg 0;
+    
+    th, td {
+      padding: $spacing-sm $spacing-md;
+      text-align: left;
+      border: 1px solid $color-border;
+    }
+    
+    th {
+      background: darken($color-box-caos, 5%);
+      font-weight: $font-weight-semibold;
+    }
+  }
+}
+
+// ============================================================================
+// 🌳 Root certified: "Box pronti, colori coerenti, spacing perfetto. CDC!"
+// 📝 FlowSense approved: "Standard definitivo per articoli narrativi."
+// ============================================================================
