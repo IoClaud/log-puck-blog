@@ -143,7 +143,7 @@ Non per fortuna. Per persistenza.
 
 ## Insights & Lezioni
 <div class="callout">
-  ### Lezione 1 — Big Sur È Vecchio Ma Con Codice Custom Funziona Tutto
+  **Lezione 1 — Big Sur È Vecchio Ma Con Codice Custom Funziona Tutto**
   
   Hardware legacy non significa impossibilità.
   
@@ -155,7 +155,7 @@ Non per fortuna. Per persistenza.
 ---
 
 <div class="callout">
-  ### Lezione 2 — MCP È Semplice Ma Richiede Precisione Assoluta
+  **Lezione 2 — MCP È Semplice Ma Richiede Precisione Assoluta**
   
   Il Model Context Protocol di Anthropic è potente ma richiede configurazione perfetta.
   
@@ -167,7 +167,7 @@ Non per fortuna. Per persistenza.
 ---
 
 <div class="callout">
-  ### Lezione 3 — Debugging A Strati Richiede Persistenza, Non Genio
+  **Lezione 3 — Debugging A Strati Richiede Persistenza, Non Genio**
   
   Problema tipico: Fix un errore, ne appare un altro diverso.
   
@@ -194,7 +194,7 @@ Non per fortuna. Per persistenza.
 ---
 
 <div class="callout">
-  ### Lezione 4 — Separazione Abbonamenti vs API È Cruciale
+  **Lezione 4 — Separazione Abbonamenti vs API È Cruciale**
   
   Confusione comune: "Ho ChatGPT Plus, quindi ho API illimitata?"
   
@@ -220,7 +220,7 @@ Non per fortuna. Per persistenza.
 ---
 
 <div class="callout">
-  ### Lezione 5 — "Non Capisco Niente" È Punto Di Partenza, Non Di Arrivo
+  **Lezione 5 — "Non Capisco Niente" È Punto Di Partenza, Non Di Arrivo**
   
   **Puck:** "non ci ho capito niente, troppo veloce. Recupererò con il tempo?"
   
@@ -247,7 +247,7 @@ Non per fortuna. Per persistenza.
 ---
 
 <div class="callout">
-  ### Lezione 6 — La Riunione Con Le "AI Di Giove"
+  **Lezione 6 — La Riunione Con Le "AI Di Giove"**
   
   **Puck:** "Le 4 AI sono cicloni forza 1000 venuti da Giove, se non arrivo preparato mi schiacciano."
   
