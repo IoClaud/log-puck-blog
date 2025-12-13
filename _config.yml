@@ -10,7 +10,9 @@ timezone: "Europe/Rome"
 # Markdown
 markdown: kramdown
 kramdown:
-  input: kramdown  # ← Kramdown standard supporta parse_block_html
+  input: kramdown  # Cambiato da GFM per supportare parse_block_html
+  hard_wrap: false
+  parse_block_html: true  # Abilita processing Markdown dentro <div markdown="1">
   auto_ids: true
   syntax_highlighter: rouge
 
