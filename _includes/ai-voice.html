@@ -1,0 +1,14 @@
+<!-- 
+  AI Voice Component
+  Per articoli Multi-Voice con interventi di più AI
+  Uso: {% include ai-voice.html ai="Grok" emoji="🔥" content="..." %}
+-->
+<div class="ai-voice ai-{{ include.ai | downcase }}" data-ai="{{ include.ai }}">
+  <div class="ai-voice-header">
+    <span class="ai-emoji">{{ include.emoji }}</span>
+    <span class="ai-name">{{ include.ai | upcase }}</span>
+  </div>
+  <div class="ai-voice-content">
+    {{ include.content | markdownify }}
+  </div>
+</div>
