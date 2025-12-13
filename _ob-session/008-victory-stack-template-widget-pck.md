@@ -33,8 +33,8 @@ puck:
 ct: "processo-multi-ai"
 pck:
   figa: 100
-  cdc: 8
-  sc: 7
+  cdc: 10
+  sc: 0
   jj_pta: 5
   jj_atp: 5
 schema_type: "BlogPosting"
