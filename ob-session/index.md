@@ -5,7 +5,6 @@ permalink: /ob-session/
 ---
 
 <!-- 🌊 FlowSense: Landing Ob Session - 09/12/2025 -->
-<!-- 🌳 Root: Simplified - no complex sorting - 12/12/2025 -->
 <!-- Tutte le sessioni operative documentate cross-section -->
 
 # Ob Session
@@ -17,18 +16,19 @@ Ogni Ob Session è valutata con **fIGA** (Function of Integrated Grid Assessment
 ---
 
 {% if site.ob-session.size > 0 %}
-
-{% for post in site.ob-session %}
+{% for post in site.ob-session reversed %}
 ## [{{ post.title }}]({{ post.url | relative_url }})
 
 {% for ai in post.ai %}{{ ai.persona }}{% unless forloop.last %} + {% endunless %}{% endfor %} · fIGA {{ post.pck.figa }}/100  
 {{ post.date | date: "%d %B %Y" }} · {{ post.ct }}
 
-{{ post.excerpt }}
+**Indice:**
+- [Caos / Osservazione]({{ post.url | relative_url }}#caos--osservazione)
+- [Insights & Lezioni]({{ post.url | relative_url }}#insights--lezioni)
+- [Riferimenti Archivistici]({{ post.url | relative_url }}#riferimenti-archivistici)
 
 ---
 {% endfor %}
-
 {% else %}
 <p style="color: var(--text-secondary); font-style: italic;">
 Nessuna Ob Session pubblicata ancora.
@@ -43,6 +43,3 @@ Nessuna Ob Session pubblicata ancora.
   <a href="{{ '/insights/' | relative_url }}">Insights</a> | 
   <a href="{{ '/' | relative_url }}">Home</a>
 </p>
-
-<!-- 🌳 Root: Ordinamento alfabetico file (001-, 002-, etc) funziona meglio di Liquid sort complesso -->
-<!-- 💡 Per ordinamento custom: popolare campo "ordine" su Notion + logic diversa (futuro) -->
