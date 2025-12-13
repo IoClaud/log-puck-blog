@@ -1,0 +1,191 @@
+// ============================================================================
+// AI VOICE COMPONENT - Multi-Voice Articles
+// Versione: 1.0 - Anker Design + Root Implementation
+// Per articoli tipo Big Band IA con interventi multipli AI intrecciati
+// ============================================================================
+
+// ----------------------------------------------------------------------------
+// AI Voice Container
+// ----------------------------------------------------------------------------
+
+.ai-voice {
+  margin: $spacing-xl 0; // 32px vertical spacing
+  padding: $spacing-lg $spacing-xl; // 20px 32px
+  border-radius: $border-radius-md;
+  border-left: 4px solid; // Colore specifico per AI
+  background: #f9f9f9; // Sfondo neutro di default
+  position: relative;
+  
+  // Header con emoji e nome AI
+  .ai-voice-header {
+    font-family: $font-family-title;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-small; // 16px
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: $spacing-md; // 16px
+    display: flex;
+    align-items: center;
+    
+    .ai-emoji {
+      margin-right: $spacing-sm; // 12px
+      font-size: 20px;
+      line-height: 1;
+    }
+    
+    .ai-name {
+      // Colore specifico per AI (vedi sotto)
+    }
+  }
+  
+  // Contenuto voce AI
+  .ai-voice-content {
+    font-family: $font-family-body;
+    font-size: $font-size-body;
+    line-height: $line-height-relaxed;
+    color: $color-text-primary;
+    
+    // Paragrafi dentro voce
+    p {
+      margin-bottom: $spacing-md;
+      
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    
+    // Enfasi dentro voce
+    strong {
+      font-weight: $font-weight-bold;
+      color: $color-text-primary;
+    }
+    
+    em {
+      font-style: italic;
+    }
+    
+    // Citazioni inline
+    blockquote {
+      border-left: 2px solid $color-border;
+      padding-left: $spacing-md;
+      margin: $spacing-md 0;
+      font-style: italic;
+      color: $color-text-secondary;
+    }
+  }
+  
+  // Responsive mobile
+  @include mobile {
+    padding: $spacing-md $spacing-lg; // 16px 20px
+    margin: $spacing-lg 0; // 20px
+    
+    .ai-voice-header {
+      font-size: $font-size-tiny; // 14px
+    }
+  }
+}
+
+// ----------------------------------------------------------------------------
+// AI-Specific Colors (Anker Palette)
+// ----------------------------------------------------------------------------
+
+// 🔥 Grok - Rosso fuoco (provocatore-costruttore)
+.ai-grok {
+  border-left-color: #ff4444;
+  background: rgba(255, 68, 68, 0.05);
+  
+  .ai-name {
+    color: #ff4444;
+  }
+}
+
+// 💎 Syncopé - Blu logico (validator logico)
+.ai-syncope {
+  border-left-color: #4444ff;
+  background: rgba(68, 68, 255, 0.05);
+  
+  .ai-name {
+    color: #4444ff;
+  }
+}
+
+// ⚓ Maré - Verde acqua (metronomo operativo)
+.ai-mare {
+  border-left-color: #00aa88;
+  background: rgba(0, 170, 136, 0.05);
+  
+  .ai-name {
+    color: #00aa88;
+  }
+}
+
+// ✨ Lùmina - Oro caldo (meta-osservatore)
+.ai-lumina {
+  border-left-color: #ffaa00;
+  background: rgba(255, 170, 0, 0.05);
+  
+  .ai-name {
+    color: #ffaa00;
+  }
+}
+
+// 🌀 Nexus - Viola deep (GLM-4)
+.ai-nexus {
+  border-left-color: #aa44ff;
+  background: rgba(170, 68, 255, 0.05);
+  
+  .ai-name {
+    color: #aa44ff;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Multi-Voice Container (opzionale per sezioni)
+// ----------------------------------------------------------------------------
+
+.multi-voice-section {
+  margin: $spacing-section 0; // 96px
+  
+  // Header sezione
+  h2, h3 {
+    font-family: $font-family-title;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+    margin-bottom: $spacing-xl;
+  }
+  
+  // Separatore visivo tra voci (opzionale)
+  .ai-voice + .ai-voice {
+    margin-top: $spacing-xl; // 32px tra interventi
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Accessibility & Print
+// ----------------------------------------------------------------------------
+
+// Focus per navigazione tastiera
+.ai-voice {
+  @include focus-visible;
+}
+
+// Print-friendly
+@media print {
+  .ai-voice {
+    break-inside: avoid;
+    border-left-width: 2px;
+    padding: $spacing-md;
+    margin: $spacing-md 0;
+    
+    .ai-voice-header {
+      .ai-emoji {
+        display: inline; // Mantieni emoji anche in stampa
+      }
+    }
+  }
+}
+
+// ============================================================================
+// 🎨 Anker certified: "Palette distintiva, leggibilità garantita!"
+// 🌳 Root implemented: "Include + CSS pronti. Multi-voice ready!"
+// ============================================================================
