@@ -1,112 +1,343 @@
-<!-- _includes/pck-widget.html -->
-<!-- PCK Widget - Benchmark visuale Ob Session -->
-<!-- Parametri: figa, cdc, sc, jj_pta, jj_atp, ct, ai -->
-<!-- 🏆 PCK WIDGET v2.0 - Root + Anker Production -->
-<!-- "Widget che non si rompe mai" - cit. Puck mentre debugga alle 3 di notte -->
+<!-- 
+  PCK Widget Component
+  Visualizza benchmark PCK con formula Syncopé
+  Include: gauge fIGA + barre parametri primitivi
+-->
 
 <div class="pck-widget">
-  
-  <!-- Gauge semicerchio fIGA -->
-  <div class="pck-gauge">
-    <!-- SVG gauge qui (se già ce l'hai lascia così) -->
-    <svg viewBox="0 0 200 120" class="gauge-svg">
-      <path class="gauge-bg" d="M 20 100 A 80 80 0 0 1 180 100" 
-            fill="none" stroke="#D4D0C8" stroke-width="8"/>
-      
-      <!-- 🎨 Fill colorato basato su valore fIGA -->
-      {% if page.figa >= 71 %}
-        {% assign gauge_color = "#0057A3" %}
-      {% elsif page.figa >= 41 %}
-        {% assign gauge_color = "#C89F65" %}
-      {% else %}
-        {% assign gauge_color = "#B54A2F" %}
-      {% endif %}
-      
-      <!-- Calcola angolo: 0-100 → 0-180 gradi -->
-      {% assign angle = page.figa | times: 1.8 %}
-      {% assign rad = angle | times: 0.0174533 %}
-      {% assign x = 100 | plus: rad | cos | times: 80 %}
-      {% assign y = 100 | minus: rad | sin | times: 80 %}
-      
-      <path class="gauge-fill" 
-            d="M 20 100 A 80 80 0 {% if page.figa > 50 %}1{% else %}0{% endif %} 1 {{ x }} {{ y }}" 
-            fill="none" 
-            stroke="{{ gauge_color }}" 
-            stroke-width="8"/>
-    </svg>
-    
-    <div class="gauge-value">{{ page.figa }}</div>
-    <div class="gauge-label">fIGA</div>
+  <div class="pck-header">
+    <h3>PCK Benchmark</h3>
+    <div class="pck-score">
+      <span class="figa-value" data-figa="{{ page.pck.figa }}">{{ page.pck.figa }}</span>
+      <span class="figa-label">fIGA</span>
+    </div>
   </div>
 
-  <!-- 📊 Barre primitive PCK -->
-  <div class="pck-scores">
-    
-    <!-- CDC - Caos Di Cane -->
-    {% if page.pck.cdc %}
-    <div class="pck-bar">
-      <span class="pck-bar-label">CDC</span>
-      <div class="pck-bar-track">
-        <div class="pck-bar-fill pck-cdc" 
-             style="width: {{ page.pck.cdc | times: 10 }}%"></div>
-      </div>
-      <span class="pck-bar-value">{{ page.pck.cdc }}</span>
-    </div>
-    {% endif %}
-    
-    <!-- SC - Studio Cognitivo -->
-    {% if page.pck.sc %}
-    <div class="pck-bar">
-      <span class="pck-bar-label">SC</span>
-      <div class="pck-bar-track">
-        <div class="pck-bar-fill pck-sc" 
-             style="width: {{ page.pck.sc | times: 10 }}%"></div>
-      </div>
-      <span class="pck-bar-value">{{ page.pck.sc }}</span>
-    </div>
-    {% endif %}
-    
-    <!-- JJ_PTA - Joke Jazz Pattern to Art -->
-    {% if page.pck.jj_pta %}
-    <div class="pck-bar">
-      <span class="pck-bar-label">JJ_PTA</span>
-      <div class="pck-bar-track">
-        <div class="pck-bar-fill pck-jj-pta" 
-             style="width: {{ page.pck.jj_pta | times: 10 }}%"></div>
-      </div>
-      <span class="pck-bar-value">{{ page.pck.jj_pta }}</span>
-    </div>
-    {% endif %}
-    
-    <!-- JJ_ATP - Art to Pattern -->
-    {% if page.pck.jj_atp %}
-    <div class="pck-bar">
-      <span class="pck-bar-label">JJ_ATP</span>
-      <div class="pck-bar-track">
-        <div class="pck-bar-fill pck-jj-atp" 
-             style="width: {{ page.pck.jj_atp | times: 10 }}%"></div>
-      </div>
-      <span class="pck-bar-value">{{ page.pck.jj_atp }}</span>
-    </div>
-    {% endif %}
-    
+  <!-- Gauge semicircolare fIGA -->
+  <div class="pck-gauge">
+    <svg viewBox="0 0 200 120" class="gauge-svg">
+      <!-- Background arc -->
+      <path d="M 20 100 A 80 80 0 0 1 180 100" 
+            fill="none" 
+            stroke="#e0e0e0" 
+            stroke-width="12" 
+            stroke-linecap="round"/>
+      <!-- Progress arc (filled by JS) -->
+      <path class="gauge-progress" 
+            d="M 20 100 A 80 80 0 0 1 180 100" 
+            fill="none" 
+            stroke="#4CAF50" 
+            stroke-width="12" 
+            stroke-linecap="round"
+            stroke-dasharray="251.2"
+            stroke-dashoffset="251.2"/>
+      <!-- Center text -->
+      <text x="100" y="95" text-anchor="middle" class="gauge-text">
+        <tspan class="gauge-number">0</tspan>
+      </text>
+    </svg>
   </div>
-  
-  <!-- CT - Context Type -->
-  {% if page.ct %}
-  <div class="pck-ct">
-    <strong>CT:</strong> {{ page.ct }}
+
+  <!-- Parametri primitivi -->
+  <div class="pck-params">
+    <div class="param-row">
+      <div class="param-label">
+        <span class="param-name">CDC</span>
+        <span class="param-desc">Cazzo Di Cane</span>
+      </div>
+      <div class="param-bar">
+        <div class="param-fill" data-value="{{ page.pck.cdc }}" data-type="estremi"></div>
+        <span class="param-value">{{ page.pck.cdc }}</span>
+      </div>
+    </div>
+
+    <div class="param-row">
+      <div class="param-label">
+        <span class="param-name">SC</span>
+        <span class="param-desc">Supercazzola</span>
+      </div>
+      <div class="param-bar">
+        <div class="param-fill" data-value="{{ page.pck.sc }}" data-type="estremi"></div>
+        <span class="param-value">{{ page.pck.sc }}</span>
+      </div>
+    </div>
+
+    <div class="param-row">
+      <div class="param-label">
+        <span class="param-name">JJ_PTA</span>
+        <span class="param-desc">Puck → AI</span>
+      </div>
+      <div class="param-bar">
+        <div class="param-fill" data-value="{{ page.pck.jj_pta }}" data-type="equilibrio"></div>
+        <span class="param-value">{{ page.pck.jj_pta }}</span>
+      </div>
+    </div>
+
+    <div class="param-row">
+      <div class="param-label">
+        <span class="param-name">JJ_ATP</span>
+        <span class="param-desc">AI → Puck</span>
+      </div>
+      <div class="param-bar">
+        <div class="param-fill" data-value="{{ page.pck.jj_atp }}" data-type="equilibrio"></div>
+        <span class="param-value">{{ page.pck.jj_atp }}</span>
+      </div>
+    </div>
   </div>
-  {% endif %}
-  
-  <!-- 🔗 Link filtri -->
-  <div class="pck-filters">
-    <a href="/ai/{{ page.ai_slug }}/">Filtra per AI</a>
-    {% if page.ct %}
-    <a href="/ct/{{ page.ct | slugify }}/">Filtra per CT</a>
-    {% endif %}
-  </div>
-  
+
+  <!-- Formula info (espandibile) -->
+  <details class="pck-formula">
+    <summary>Formula PCK</summary>
+    <div class="formula-content">
+      <p><strong>POLO_STUDIO</strong> = (CURVA_ESTREMI(CDC) + CURVA_ESTREMI(SC)) / 2</p>
+      <p><strong>fIGA</strong> = √(CURVA_EQUILIBRIO(JJ_PTA) × CURVA_EQUILIBRIO(JJ_ATP))</p>
+      <p><strong>PCK</strong> = √(POLO_STUDIO × fIGA)</p>
+      <p class="formula-note">Scale: input 0-10, output 0-100</p>
+    </div>
+  </details>
 </div>
 
-<!-- 🌳 Root says: "Se questo widget si rompe, è colpa del futuro Puck che ha cambiato tutto alle 2 di notte" -->
+<style>
+.pck-widget {
+  background: #f8f9fa;
+  border-left: 4px solid #4CAF50;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 4px;
+}
+
+.pck-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.pck-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.pck-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.figa-value {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4CAF50;
+  line-height: 1;
+}
+
+.figa-label {
+  font-size: 0.75rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.pck-gauge {
+  margin: 1rem 0 2rem;
+}
+
+.gauge-svg {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.gauge-progress {
+  transition: stroke-dashoffset 1s ease-out;
+}
+
+.gauge-text {
+  font-size: 24px;
+  font-weight: bold;
+  fill: #333;
+}
+
+.pck-params {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.param-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.param-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.param-name {
+  font-weight: bold;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.param-desc {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.param-bar {
+  position: relative;
+  height: 24px;
+  background: #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.param-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50, #45a049);
+  border-radius: 12px;
+  transition: width 0.8s ease-out;
+  width: 0%;
+}
+
+.param-value {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #333;
+  z-index: 1;
+}
+
+.pck-formula {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ddd;
+}
+
+.pck-formula summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #666;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+.pck-formula summary:hover {
+  color: #4CAF50;
+}
+
+.formula-content {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.formula-content p {
+  margin: 0.5rem 0;
+}
+
+.formula-note {
+  font-size: 0.75rem;
+  color: #666;
+  font-style: italic;
+  margin-top: 1rem !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  .param-row {
+    grid-template-columns: 100px 1fr;
+    gap: 0.5rem;
+  }
+  
+  .param-desc {
+    display: none;
+  }
+}
+</style>
+
+<script>
+(function() {
+  // Formule Syncopé
+  function curvaEstremi(x) {
+    // Premia scelta intenzionale (0 o 10), penalizza mediocrità (5)
+    return Math.pow((x - 5), 2) / 25 * 100;
+  }
+
+  function curvaEquilibrio(x) {
+    // Premia equilibrio (5), penalizza squilibrio (0 o 10)
+    return (25 - Math.pow((x - 5), 2)) / 25 * 100;
+  }
+
+  // Inizializza widget
+  function initPCKWidget() {
+    const widget = document.querySelector('.pck-widget');
+    if (!widget) return;
+
+    // Leggi valori
+    const figa = parseInt(widget.querySelector('[data-figa]').getAttribute('data-figa'));
+    
+    // Anima gauge
+    const gaugeProgress = widget.querySelector('.gauge-progress');
+    const gaugeNumber = widget.querySelector('.gauge-number');
+    const maxDash = 251.2; // Circonferenza semicerchio
+    const offset = maxDash - (maxDash * figa / 100);
+    
+    setTimeout(() => {
+      gaugeProgress.style.strokeDashoffset = offset;
+      let current = 0;
+      const interval = setInterval(() => {
+        current += 1;
+        gaugeNumber.textContent = Math.min(current, figa);
+        if (current >= figa) clearInterval(interval);
+      }, 15);
+    }, 100);
+
+    // Anima barre parametri
+    const params = widget.querySelectorAll('.param-fill');
+    params.forEach(param => {
+      const value = parseInt(param.getAttribute('data-value'));
+      const type = param.getAttribute('data-type');
+      
+      // Calcola valore normalizzato (0-100)
+      const normalized = type === 'estremi' 
+        ? curvaEstremi(value) 
+        : curvaEquilibrio(value);
+      
+      // Colore basato su valore normalizzato
+      let color;
+      if (normalized >= 80) color = '#4CAF50'; // Verde
+      else if (normalized >= 50) color = '#FFC107'; // Giallo
+      else color = '#FF5722'; // Rosso
+      
+      param.style.background = `linear-gradient(90deg, ${color}, ${color}dd)`;
+      
+      setTimeout(() => {
+        param.style.width = normalized + '%';
+      }, 200);
+    });
+  }
+
+  // Init on load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPCKWidget);
+  } else {
+    initPCKWidget();
+  }
+})();
+</script>
